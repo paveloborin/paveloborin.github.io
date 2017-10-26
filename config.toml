@@ -20,7 +20,7 @@ enableRobotsTXT = true
 author = "Pavel Oborin"
 intro = "Software engineer"
 description = "Hello!"
-authorimage = "headshot.jpg"
+authorimage = "headshot.png"
 dateformat = "Jan 2, 2006"
 
 ## Site Meta Settings
@@ -31,7 +31,7 @@ keywords = "minimalist,blog,goa,hugo,developer"
 ## Social Accounts
 [params.social]
 github = "paveloborin"
-linkedin = "paveloborin"
+linkedin = "pavel-oborin"
 stackoverflow = "7936172/pavel-oborin"
 email = "pablo.oborin@gmail.com"
 
