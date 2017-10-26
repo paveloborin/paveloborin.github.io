@@ -8,20 +8,17 @@ canonifyurls = false
 contentdir = "content"
 layoutdir = "layouts"
 
-
-author = "Erlich Bachman"
-
 [params]
-    author = "Calin Tataru"
-    description = "Personal blog theme powered by Hugo"
-    githubUsername = "#"
+    author = "Pavel Oborin"
+    description = "Hi, I am Pavel Oborin, back-end web developer."
+    githubUsername = "paveloborin"
     accent = "red"
     showBorder = true
     backgroundColor = "white"
     font = "Raleway" # should match the name on Google Fonts!
     highlight = true
     highlightStyle = "solarized-dark"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+    highlightLanguages = ["php", "mysql","go"]
 
 [[menu.main]]
     url = "/"
@@ -43,26 +40,21 @@ author = "Erlich Bachman"
 # The list of available icons can be found at http://fontawesome.io/icons/
 
 [[menu.icon]]
-    url = "mailto:me@example.com"
+    url = "mailto:me@pavel.oborin.me"
     name = "envelope-o"
     weight = 1
 
 [[menu.icon]]
-    url = "https://github.com/username/"
+    url = "https://github.com/paveloborin"
     name = "github"
     weight = 2
 
 [[menu.icon]]
-    url = "https://twitter.com/username/"
-    name = "twitter"
+    url = "https://www.linkedin.com/in/paveloborin"
+    name = "linkedin"
     weight = 3
 
 [[menu.icon]]
-    url = "https://www.linkedin.com/in/username/"
-    name = "linkedin"
-    weight = 4
-
-[[menu.icon]]
-    url = "https://www.stackoverflow.com/username/"
+    url = "https://stackoverflow.com/users/7936172/pavel-oborin"
     name = "stack-overflow"
-    weight = 5
+    weight = 4
