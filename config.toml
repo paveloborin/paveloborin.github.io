@@ -42,7 +42,7 @@ layoutdir = "layouts"
     weight = 4
 
 [[menu.main]]
- url = "/project/"
+ url = "https://www.visualcv.com/pavel-oborin"
     name = "CV"
     weight = 5
 
