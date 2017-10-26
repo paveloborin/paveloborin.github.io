@@ -10,7 +10,7 @@ layoutdir = "layouts"
 
 [params]
     author = ""
-    description = "Hi,<br/> I am Pavel Oborin, back-end web developer."
+    description = "HEY. GLAD YOU'RE HERE!<br/> My name is Pavel Oborin, I am a back-end web developer and this is my space"
     githubUsername = "paveloborin"
     accent = "red"
     showBorder = true
