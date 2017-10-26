@@ -1,0 +1,5 @@
+baseURL = "http://paveloborin.github.io/"
+languageCode = "en-us"
+title = "Pavel Oborin"
+theme = "ananke"
+publishDir = "."
