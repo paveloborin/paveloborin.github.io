@@ -3,12 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://pavel.oborin.me/posts/my-first-post/</loc>
+    <lastmod>2017-10-26T17:53:40+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pavel.oborin.me/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://pavel.oborin.me/</loc>
+    <lastmod>2017-10-26T17:53:40+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://pavel.oborin.me/posts/</loc>
+    <lastmod>2017-10-26T17:53:40+05:00</lastmod>
     <priority>0</priority>
   </url>
   
