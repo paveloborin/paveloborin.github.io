@@ -1,257 +1,94 @@
-@-ms-viewport
-{
-    width: device-width;
+html, body {
+    height: 100%;
 }
-@-o-viewport
-{
-    width: device-width;
+
+body {
+    padding-top: 55px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
 }
-@viewport
-{
-    width: device-width;
+
+main {
+    margin: auto;
+    padding: 25px;
+    flex: 1 0 auto;
+    max-width: 750px;
 }
-a,
-a:hover,
-a:visited,
-a:link
-{
+
+/*footer*/
+
+.copyright {
+    margin: 15px 0;
+}
+
+/*home page*/
+
+.intro {
+    margin: 25vh 0;
+}
+
+.intro > h1 {
+    color: #212121;
+    font-size: 12vh;
+}
+
+.intro > h2 {
+    color: #757575;
+    font-size: 3vmin;
+}
+
+/*apply accent colour to links*/
+
+a:link, a:visited {
+    color: var(--accent);
+}
+
+a.icon:hover {
     text-decoration: none;
+}
 
-    color: #526d7a;
+a:hover {
+    color: var(--accent) !important;
 }
-body
-{
-    font-family: 'Roboto Slab', 'Roboto', 'Lato', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
 
-    width: auto;
-    height: 100%;
-    min-height: 100%;
-    margin: 0;
+/*paginator at bottom of list view*/
 
-    background-color: #fcfcfc;
+.pages {
+    padding: 15px 0;
 }
-html
-{
-    position: relative;
 
-    height: 100%;
-    min-height: 100%;
-    margin: 0;
-}
-.author
-{
-    color: #444;
-}
-.author h1,
-.author h2,
-.author h3,
-.author h4,
-.author h5,
-.author h6,
-.author p
-{
-    font-family: 'Roboto Slab', serif;
-}
-.category
-{
-    color: #966 !important;
-}
-.container
-{
-    overflow: auto;
-
-    max-width: 680px;
+.pages-icon {
     padding: 0 15px;
 }
-.content
-{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-div.content
-{
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
 
-    color: #777;
-}
-.copyright
-{
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    font-weight: 200;
-}
-.description
-{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
-    color: #bbb;
-}
-.error
-{
-    font-family: 'Roboto', sans-serif;
+/*list item for posts and projects*/
 
-    margin-top: 100px;
+.item {
+    padding: 10px 0;
 }
-.error h1
-{
-    font-size: 80px;
 
-    color: #bbb;
+.item-tag {
+    background-color: var(--accent);
 }
-.error p
-{
-    margin-top: 150px;
 
-    color: #777;
-}
-.excerpt
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    font-weight: 200;
+/*navigation bar icons*/
 
-    color: #555;
-    margin-bottom: 20px;
+.navbar-icon {
+    font-size: 125%;
+    display: inline-block !important;
 }
-.footer
-{
-    margin-top: 10px;
 
-    color: #bbb;
-}
-.header
-{
-    margin-top: 60px;
-    margin-bottom: 20px;
-}
-.headshot
-{
-    width: 200px;
-    height: 200px;
-}
-.info
-{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.intro
-{
-    font-family: 'Roboto Slab', serif;
-    font-weight: 200;
-    color: #777;
-}
-h3.intro
-{
-    margin-top: 0px
-}
-.list
-{
-    font-family: 'Roboto', sans-serif;
+/*coloured borders at top and bottom of the page*/
 
-    margin-top: 50px;
+.navbar.navbar-default {
+    border-top: var(--border-width) solid var(--accent);
 }
-.list li
-{
-    list-style: none;
-}
-.list-entry
-{
-    font-family: 'Roboto Slab', serif;
-    font-size: 25px;
-    font-weight: 400;
 
-    margin-top: 10px;
-    margin-bottom: 20px;
+footer {
+    border-bottom: var(--border-width) solid var(--accent);
 }
-.list-entry-link
-{
-    padding: 0;
-}
-.main-menu
-{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.menu
-{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.menu-item
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
 
-    text-decoration: none;
-
-    color: #966 !important;
-}
-.meta
-{
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    font-weight: 200;
-
-    color: #bbb;
-}
-a.meta
-{
-    color: #966;
-}
-h6.meta
-{
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    font-weight: 200;
-
-    color: #bbb;
-}
-section.meta {
-    margin-top: 
-}
-.powered
-{
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-}
-.social {
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.social,
-.social a
-{
-    color: #526d7a;
-}
-.title
-{
-    font-family: 'Roboto Slab', serif;
-    font-weight: 400;
-
-    color: #555;
-}
-header.title
-{
-    margin-top: 50px;
-    padding: 0 15px;
-}
-@media (max-width: 991px)
-{
-    .header
-    {
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
-    .list
-    {
-        font-family: 'Roboto', sans-serif;
-
-        margin-top: 30px;
-    }
+img {
+    max-width: 100%;
 }

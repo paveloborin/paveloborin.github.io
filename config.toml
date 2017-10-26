@@ -1,7 +1,7 @@
 baseURL = "http://pavel.oborin.me/"
 languageCode = "en-us"
 title = "Pavel Oborin"
-theme = "hugo-goa"
+theme = "minimal"
 publishDir = "."
 builddrafts = false
 canonifyurls = false
@@ -11,44 +11,58 @@ layoutdir = "layouts"
 
 author = "Erlich Bachman"
 
-
-## Hugo Built-in Features
-enableRobotsTXT = true
-
-## Site Settings
 [params]
-author = "Pavel Oborin"
-intro = "Software engineer"
-description = "Hello!"
-authorimage = "headshot.png"
-dateformat = "Jan 2, 2006"
+    author = "Calin Tataru"
+    description = "Personal blog theme powered by Hugo"
+    githubUsername = "#"
+    accent = "red"
+    showBorder = true
+    backgroundColor = "white"
+    font = "Raleway" # should match the name on Google Fonts!
+    highlight = true
+    highlightStyle = "solarized-dark"
+    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
-## Site Meta Settings
-[params.meta]
-description = "Simple minimalist theme"
-keywords = "minimalist,blog,goa,hugo,developer"
-
-## Social Accounts
-[params.social]
-github = "paveloborin"
-linkedin = "pavel-oborin"
-stackoverflow = "7936172/pavel-oborin"
-email = "pablo.oborin@gmail.com"
-
-
-## Main Menu
 [[menu.main]]
-    name = "blog"
-    weight = 100
-    identifier = "blog"
-    url = "/blog/"
+    url = "/"
+    name = "Home"
+    weight = 1
+
 [[menu.main]]
-    name = "about"
-    identifier = "about"
-    weight = 200
-    url = "/about/"
+    url = "/post/"
+    name = "Posts"
+    weight = 2
+
 [[menu.main]]
-    name = "coderag"
-    identifier = "coderag"
-    weight = 300
-    url = "/coderag/"
+    url = "/project/"
+    name = "Projects"
+    weight = 3
+
+# Social icons to be shown on the right-hand side of the navigation bar
+# The "name" field should match the name of the icon to be used
+# The list of available icons can be found at http://fontawesome.io/icons/
+
+[[menu.icon]]
+    url = "mailto:me@example.com"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://github.com/username/"
+    name = "github"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://twitter.com/username/"
+    name = "twitter"
+    weight = 3
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/username/"
+    name = "linkedin"
+    weight = 4
+
+[[menu.icon]]
+    url = "https://www.stackoverflow.com/username/"
+    name = "stack-overflow"
+    weight = 5
