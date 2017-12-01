@@ -42,8 +42,8 @@ layoutdir = "layouts"
     weight = 4
 
 [[menu.main]]
-    url = "/just-for-fun/"
-    name = "Just For fun"
+    url = "/just-for-fan/"
+    name = "Just For fans"
     weight = 10
 
 
