@@ -27,24 +27,19 @@ layoutdir = "layouts"
     weight = 1
 
 [[menu.main]]
-    url = "/post/"
+    url = "/posts/"
     name = "Posts"
     weight = 2
 
 [[menu.main]]
-    url = "/project/"
-    name = "Projects"
-    weight = 3
-
-[[menu.main]]
  url = "https://github.com/paveloborin"
     name = "GITHUB"
-    weight = 4
+    weight = 3
 
 [[menu.main]]
  url = "https://www.visualcv.com/pavel-oborin"
     name = "CV"
-    weight = 5
+    weight = 4
 
 # Social icons to be shown on the right-hand side of the navigation bar
 # The "name" field should match the name of the icon to be used
@@ -69,3 +64,13 @@ layoutdir = "layouts"
     url = "https://stackoverflow.com/users/7936172/pavel-oborin"
     name = "stack-overflow"
     weight = 4
+
+[[menu.icon]]
+    url = "https://scholar.google.ru/citations?user=sR8RU10AAAAJ"
+    name = "graduation-cap"
+    weight = 5
+
+[[menu.icon]]
+    url = "https://habrahabr.ru/users/paveloborin/"
+    name = "header"
+    weight = 6
