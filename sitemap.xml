@@ -3,12 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://pavel.oborin.me/posts/my-first-post/</loc>
+    <loc>http://pavel.oborin.me/posts/introduction-to-application-security/</loc>
     <lastmod>2017-10-26T17:53:40+05:00</lastmod>
   </url>
   
   <url>
+    <loc>http://pavel.oborin.me/just-for-fun/writings/games-in-the-fog/</loc>
+    <lastmod>2015-10-26T17:53:40+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pavel.oborin.me/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://pavel.oborin.me/just-for-fun/</loc>
+    <lastmod>2015-10-26T17:53:40+05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -26,6 +37,18 @@
   
   <url>
     <loc>http://pavel.oborin.me/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://pavel.oborin.me/tags/%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%8B-%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9/</loc>
+    <lastmod>2017-10-26T17:53:40+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://pavel.oborin.me/tags/%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE/</loc>
+    <lastmod>2015-10-26T17:53:40+05:00</lastmod>
     <priority>0</priority>
   </url>
   
