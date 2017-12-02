@@ -8,6 +8,16 @@
   </url>
   
   <url>
+    <loc>http://pavel.oborin.me/just-for-fan/book-reviews/age-of-iron/</loc>
+    <lastmod>2017-08-13T20:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pavel.oborin.me/just-for-fan/book-reviews/foe/</loc>
+    <lastmod>2017-07-30T13:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pavel.oborin.me/just-for-fan/writings/games-in-the-fog/</loc>
     <lastmod>2015-10-26T17:53:40+05:00</lastmod>
   </url>
@@ -19,7 +29,7 @@
   
   <url>
     <loc>http://pavel.oborin.me/just-for-fan/</loc>
-    <lastmod>2015-10-26T17:53:40+05:00</lastmod>
+    <lastmod>2017-08-13T20:30:40+05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -43,6 +53,12 @@
   <url>
     <loc>http://pavel.oborin.me/tags/%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%8B-%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9/</loc>
     <lastmod>2017-10-26T17:53:40+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://pavel.oborin.me/tags/%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D0%B8/</loc>
+    <lastmod>2017-08-13T20:30:40+05:00</lastmod>
     <priority>0</priority>
   </url>
   

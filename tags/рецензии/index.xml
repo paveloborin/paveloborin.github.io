@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Just-for-fans on Pavel Oborin</title>
-    <link>http://pavel.oborin.me/just-for-fan/</link>
-    <description>Recent content in Just-for-fans on Pavel Oborin</description>
+    <title>Рецензии on Pavel Oborin</title>
+    <link>http://pavel.oborin.me/tags/%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D0%B8/</link>
+    <description>Recent content in Рецензии on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 Aug 2017 20:30:40 +0500</lastBuildDate>
     
-	<atom:link href="http://pavel.oborin.me/just-for-fan/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://pavel.oborin.me/tags/%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -30,17 +30,6 @@
       <guid>http://pavel.oborin.me/just-for-fan/book-reviews/foe/</guid>
       <description>&amp;ldquo;Мистер Фо&amp;rdquo; Джон Кутзее Тут совершенно случайно познакомился с таким интересным автором, как Джон Кутзее. Его роман &amp;ldquo;Мистер Фо&amp;rdquo; оказался под одной обложкой вместе с одним из моих любимых романов &amp;ldquo;Пятница или тихоокеанский лимб&amp;rdquo; Турнье, который мне вдруг захотелось перечитать.
 Сразу скажу, что не ожидаю, что все проникнутся к Мистерау Фо любовью, думаю это одна их тех книг, что изначально не задумывались для широкой аудитории. Но на мой вкус, это безусловно шедевр.</description>
-    </item>
-    
-    <item>
-      <title>Игры в тумане</title>
-      <link>http://pavel.oborin.me/just-for-fan/writings/games-in-the-fog/</link>
-      <pubDate>Mon, 26 Oct 2015 17:53:40 +0500</pubDate>
-      
-      <guid>http://pavel.oborin.me/just-for-fan/writings/games-in-the-fog/</guid>
-      <description>Игры в тумане. Первая повесть Основной задачей, которую я ставлю перед собой, приступая к написанию данного рассказа, является с одной стороны создание законченного текста простого для воспрития, с другой повесть с элементами саморефлексии, символизма и множественными отсылами.
-Основные символы: туман, порталы, сон.
-Повесть должна стать своеобразным слоеным пирогом с элементами игры, т.е вызывать интерес у разных людей. Для обывателей это будет фантастический рассказ о перелете на Марс, о возрастном кризисе, человеческих взаимоотношениях, для думающих людей это прежде всего текст о поиске себя.</description>
     </item>
     
   </channel>
