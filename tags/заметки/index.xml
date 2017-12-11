@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Pavel Oborin</title>
-    <link>http://pavel.oborin.me/posts/</link>
-    <description>Recent content in Posts on Pavel Oborin</description>
+    <title>Заметки on Pavel Oborin</title>
+    <link>http://pavel.oborin.me/tags/%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8/</link>
+    <description>Recent content in Заметки on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 Dec 2017 22:42:10 +0500</lastBuildDate>
     
-	<atom:link href="http://pavel.oborin.me/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://pavel.oborin.me/tags/%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>http://pavel.oborin.me/posts/village-programmers/</guid>
       <description>Размышления про деревенских программистов Недавно моя сестра решила сделать ремонт в ванной комнате и наняла человека, целиком положившишь на рекомендации знакомой. В итоге этот человек допустил все грубейшие ошибки какие только было можно: установил унитаз высоко и не по центру туалета, сделал трубу слива в ванной выше уровня слива самой ванной, двери в ванной и в туалете разной высоты. Сестра отдала за работу месячную зарплату и две недели времени на контроль за исправлением (расстаться с “мастером” и нанять нового выходило уже намного дороже запланированного бюджета).</description>
-    </item>
-    
-    <item>
-      <title>Краткое введение в безопасность приложений</title>
-      <link>http://pavel.oborin.me/posts/introduction-to-application-security/</link>
-      <pubDate>Thu, 26 Oct 2017 17:53:40 +0500</pubDate>
-      
-      <guid>http://pavel.oborin.me/posts/introduction-to-application-security/</guid>
-      <description>Краткое введение в безопасность приложений Перевод статьи Scott Arciszewski «A Gentle Introduction to Application Security». Вступление У меня есть печальные новости для программистов, читающих эту заметку. Но, забегая вперед, сразу скажу что нет худа без добра.
-Новость первая: если вы являетесь веб-разработчиком или только размышляете о том, чтобы начать изучать веб-разработку, то, вероятнее всего, вы не думаете о себе как о специалисте по безопасности. Может быть, вы принимаете во внимание некоторые угрозы безопасности, например, при валидации пользовательских данных.</description>
     </item>
     
   </channel>
