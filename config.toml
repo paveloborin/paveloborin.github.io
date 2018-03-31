@@ -7,7 +7,7 @@ builddrafts = true
 canonifyurls = false
 contentdir = "content"
 layoutdir = "layouts"
-
+googleAnalytics = "UA-116728151-1"
 [params]
     author = ""
     description = "HEY. GLAD YOU'RE HERE!<br/> My name is Pavel Oborin, I am a back-end web developer and this is my space"
