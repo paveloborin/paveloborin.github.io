@@ -6,10 +6,21 @@
     <description>Recent content on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Jan 2018 08:53:40 +0500</lastBuildDate>
+    <lastBuildDate>Sat, 31 Mar 2018 18:43:57 +0500</lastBuildDate>
     
 	<atom:link href="http://pavel.oborin.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GDPR краткий обзор. Мои мысли и рекомендации</title>
+      <link>http://pavel.oborin.me/posts/gdpr/</link>
+      <pubDate>Sat, 31 Mar 2018 18:43:57 +0500</pubDate>
+      
+      <guid>http://pavel.oborin.me/posts/gdpr/</guid>
+      <description>26 мая 2018 г. вступает в силу GDPR - новый европейский закон о защите перс. данных.
+Хорошее представление о законе могут дать следующие документы: сам закон, аналитика от Института Исследования Интернета.
+О GDPR и его роли Закон предъявляет целый ряд существенных требований к обработке персональных данных жителей Евросоюза. Нарушение требований будет караться большими штрафами (озвучена цифра в 20 млн евро), потерей репутации и, возможно, запретом на работу на европейском рынке, вплоть до уголовной ответственности.</description>
+    </item>
     
     <item>
       <title>Jira в качестве индивидуального планировщика</title>
