@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Система индивидуального планирования за 3000 руб на базе Orange Pi и Jira</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://pavel.oborin.me//css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/mysql.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.40.2" />
+        
+        
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116728151-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-116728151-1');
+        </script>
+        
+    </head>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Система индивидуального планирования за 3000 руб на базе Orange Pi и Jira</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                                <li><a href="https://github.com/paveloborin">GITHUB</a></li>
+                            
+                                <li><a href="https://www.visualcv.com/pavel-oborin">CV</a></li>
+                            
+                                <li><a href="/just-for-fan/">Just For fans</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:me@pavel.oborin.me"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/paveloborin"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/paveloborin"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/7936172/pavel-oborin"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://scholar.google.ru/citations?user=sR8RU10AAAAJ"><i class="fa fa-graduation-cap"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://habrahabr.ru/users/paveloborin/"><i class="fa fa-header"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/posts/jira-and-orange-pi/">Система индивидуального планирования за 3000 руб на базе Orange Pi и Jira</a></h4>
+    <h5>May 1, 2018</h5>
+     <kbd class="item-tag">планирование</kbd>  <kbd class="item-tag">jira</kbd>  <kbd class="item-tag">orange pi</kbd> 
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="аннотация">Аннотация</h3>
+
+<p>Данная заметка посвящена дальнейшему развитию идеи использования JIRA в качестве системы для индивидуального планирования, описанной мною <a href="http://pavel.oborin.me/posts/jira-for-individual-use/">ранее</a>.
+А именно я бы хотел поделиться опытом развертывания этой системы на платформе Orange Pi.</p>
+
+<h3 id="вступление">Вступление</h3>
+
+<p>В начале года я стал активно использовать JIRA для индивидуального планирования.
+Что сразу отозвалось повышением моей личной производителньости.
+Через пару месяцев я решил, что старый ноутбук для этого не самое лучшее решение и можно сделать лучше.</p>
+
+<p>Я являюсь поклонником философии микросервисов; докер, контейнеры, кубернетис - наше все.
+И мне очень импонирует сама идея существования неким образом инкапсулированной системы, работающей на &ldquo;отдельной&rdquo; машине, не разделяющей больше ни с кем свои ресурсы.
+Будь моя воля я бы все &ldquo;развязал&rdquo; и превратил в микросервисы :).<br />
+При этом содержать целый компьютер для такой системы как система планирования, которой пользуешься пару раз в день, не совсем адекватное решение: компьютер шумит, греется, требует отдельное место и потребляется довольно много энергии.
+Да и честно говоря, после экспериментирования с Ардуино, мне уже давно хотелось поиграться с более мощными платами вроде Raspberry Pi или ее китайским аналогом Orange Pi, и дело стояло только за поиском способа ее применения.</p>
+
+<p>Цена, размеры, энергопотребление, неприхотливость к питанию и окружающим условиям позволяют создавать на базе Orange Pi самостоятельные портативные системы типа &ldquo;поставил и забыл&rdquo; требующие минимального обслуживания.<br />
+Для JIRA с одним пользователем Orange Pi оказался просто идеальным вариантом.</p>
+
+<h3 id="orange-pi">Orange Pi</h3>
+
+<p>Orange Pi имеет довольно широкую линейку моделей.
+Я заказывал самую мощную на тот момент модель - OrangePi Win Plus на <a href="https://ru.aliexpress.com/item/Orange-Pi-Win-Plus-Development-Board-A64-Quad-core-Support-linux-and-android-Beyond-Raspberry-Pi/32803012893.html?spm=a2g0s.9042311.0.0.3ZdvMD">aliexpress</a>.
+Через три недели коробочка с платой была уже у меня.</p>
+
+<p><img src="/static/orangePi.jpg" alt="OrangePi Win Plus" /></p>
+
+<p>OrangePi Win Plus  это плата размером с кредитную карту, имеющая на борту: 2Гб оперативной памяти, 4х ядерный процессор A64, bluetooth, видео и аудио выход, IR датчик, 4 разъема USB,  Wi-Fi модуль и  Ethernet 1Гб.
+Всего за 2000 руб вы получаете полноценный миникомпьютер, к которому, если необходимо, можно подключить и монитор.</p>
+
+<p>Питается OrangePi от microUSD (для своей я использовал старую зарядку от iPhone на 5V и 1.2А).
+Плата не имеет каких-либо систем охлаждения вроде кулеров или радиаторов, в принципе она спокойно будет работать и без них.</p>
+
+<h3 id="установка-операционной-системы-и-первый-запуск">Установка операционной системы и первый запуск</h3>
+
+<p>Процесс установки ОС выглядит достаточно просто.
+Нужно скачать дистрибутив одной из поддерживаемых операционных систем: ubuntu, debian, android, raspbian непосредственно с сайта ОС, либо использовать уже готовые сборки с сайта OrangePi.
+Записать образ на SD-карту (плата поддерживает карты до 64 ГБ).
+Желательно использовать карты 10 класса скорости.</p>
+
+<p>Далее я буду описывать установку серверной версии ubuntu без непосредственного подключения монитора и других устройств ввода-вывода к плате.
+Всю настройку мы будем осуществлять по ssh с компьютера, находящегося в одной сети с платой.
+Но с таким же успехом можно для управления подключить монитор и клавиатуру.</p>
+
+<p>После включения платы, если вы правильно записали образ на SD-карту, начнется установка ОС, которая продлится несколько минут.</p>
+
+<p>Подключите плату к роутеру по витой паре, через панель управления роутера найдите плату</p>
+
+<p><img src="/static/router1.jpg" alt="Настройка статического IP, 1" /></p>
+
+<p>и установите для нее фиксированный Ip адрес</p>
+
+<p><img src="/static/router2.jpg" alt="Настройка статического IP, 2" /></p>
+
+<p>, а также сразу задайте url в настройках DNS роутера, например, jira.loc, по нему вы будете заходить в свой планировщик.
+При желании настройте WiFi.</p>
+
+<p><img src="/static/router3.jpg" alt="Настройка DNS" /></p>
+
+<p>Зайдете по ssh на OrangePi.
+Логин и пароль зависит от дистрибутива, который вы установили.</p>
+
+<p><img src="/static/terminal.jpg" alt="Ssh orange pi" /></p>
+
+<h3 id="установка-jira">Установка JIRA</h3>
+
+<p>Для работы Jira понадобится установленная java машина версии не ниже 1.8, база данных mysql либо postgres, также можно на первое время использовать встроенную в jira бд.</p>
+
+<p>Давайте все установим.</p>
+
+<h4 id="обновление-java">Обновление java</h4>
+
+<p><code>sudo add-apt-repository ppa:webupd8team/java</code></p>
+
+<p><code>sudo apt-get update</code></p>
+
+<p><code>sudo apt-get install oracle-java8-installer</code></p>
+
+<h4 id="подготовка-бд">Подготовка БД</h4>
+
+<p>Устновка postgresql</p>
+
+<p><code>sudo apt-get install postgresql postgresql-contrib</code></p>
+
+<p>Создание пользователя бд</p>
+
+<p><code>sudo -i -u postgres</code></p>
+
+<p><code>createuser --interactive</code></p>
+
+<p>вводим Jiradbuser (superuser)</p>
+
+<p>Создание базы</p>
+
+<p><code>Create db jiradb</code></p>
+
+<p><code>psql</code></p>
+
+<p><code>postgres=# GRANT ALL PRIVILEGES ON DATABASE jiradb TO jiradbuser</code></p>
+
+<p>Загрузка jira</p>
+
+<p><code>wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.9.0.tar.gz
+ tar -xvf atlassian-jira-software-7.9.0.tar.gz 
+ cd atlassian-jira-software-7.9.0-standalone/
+ mkdir jirasoftware-home</code></p>
+
+<p>Отредактируйте  <installation-directory>\atlassian-jira\WEB-INF\classes\jira-application.properties, после jira.home пропишите абсолютный путь к ранее созданной папке:
+jira.home=jirasoftware-home</p>
+
+<p>Запуск скрипта установки
+<code>/jira/atlassian-jira-software-7.9.0-standalone/bin$ ./start-jira.sh</code></p>
+
+<p>Далее Jira откроет http порт для прохождения пошаговой процедуры установки, теперь вы можете завершить работу с терминалаом и зайти по адресу jira.loc:port.
+Следуя инструкциям завершите установку.
+Выберите при установке триальную лицензию на 30 дней, в дальнейшем вы сможете купить “пожизненную” платную лицензию на 10 пользователей всего за 10$.</p>
+
+<p>Поздравляю вы установили Jira на Orange Pi!</p>
+
+<h3 id="организация-работы-с-jira">Организация работы с JIRA</h3>
+
+<p>Итак, за 3000 руб (Orange Pi - 1850, лицензия Jira - 650, карта памяти 500 руб) мы получили полноценную систему плнирования со следующими преимуществами:</p>
+
+<ul>
+<li><p>можно находясь дома зайти в свой планировщик с любого устройства,</p></li>
+
+<li><p>ваши данные только ваши и никуда не отправляются,</p></li>
+
+<li><p>вы полностью независимы от всех внешних ресурсов, кроме электричества.</p></li>
+</ul>
+
+<p>В дальнейшем Вы можете сами придумать ваши процессы планирования: просто закидывать новые задачи в беклог и периодически их приоритизировать и брать в спринт, либо как-то разделять различные задачи по разным проектам.
+Лично мне удобно вообще все задачи, вплоть до похода в магазин, фиксировать в Jira, это привносит в жизнь некий порядок и дисциплину, но вы можете использовать, ее скажем  только для самых важных задач.
+В общем дальше все зависит только от полета вашей фантазии.</p>
+
+<p>Например, при изучении чего-либо масштабного - книги или обучающего курса я обычно создаю эпик под эту цель и уже внутри эпика набрасывать тикеты в соответствии с содержанием книги.
+Потом по мере прохождения курса в тикетах удобно фиксировать свои мысли по поводу прочитанного.
+Это довольно удобно.
+Выглядит это все примерно так:</p>
+
+<p><img src="/static/jira2.jpg" alt="Jira interface example" /></p>
+
+<h4 id="заключение">Заключение</h4>
+
+<p>Возможно кто-то посчитает, что 3000 руб. это слишком дорого для таких целей или слишком заморочено, но эти деньги быстро окупятся повышением вашей продуктивности, а по сложности, это не сложнее использования других аналогичных системы, разобравшись один раз, вы можете использовать ее многие годы.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved.</p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
