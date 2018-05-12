@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Pavel Oborin</title>
+    <link>http://pavel.oborin.me/tags/go/</link>
+    <description>Recent content in Go on Pavel Oborin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 May 2018 10:58:57 +0200</lastBuildDate>
+    
+	<atom:link href="http://pavel.oborin.me/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Да поможет нам Go. Базовые ценности и основы философии языка Go по мотивам курса Билла Кеннеди</title>
+      <link>http://pavel.oborin.me/posts/go-bless-us/</link>
+      <pubDate>Sat, 12 May 2018 10:58:57 +0200</pubDate>
+      
+      <guid>http://pavel.oborin.me/posts/go-bless-us/</guid>
+      <description>Аннотация Заметка строится вокруг первой лекции курса Билла Кеннеди (William Kennedy) “Ultimate Go Programming” доступного на safaribook (https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/). Меня настолько воодушевил данный курс, что показалось интересным сделать некую выжимку своего конспекта по этим лекциям.
+Предугадывая возможную негативную реакцию поспешу заметить, что конечно любой человек на вопрос что он предпочтет: послушать лекцию человека, совершившего некое открытие, или лектора, который ничего не открыл, но построил свою лекцию на описании чужого открытия, выбрал бы первое.</description>
+    </item>
+    
+  </channel>
+</rss>

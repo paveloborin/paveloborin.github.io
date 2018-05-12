@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://pavel.oborin.me/posts/go-bless-us/</loc>
+    <lastmod>2018-05-12T10:58:57+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pavel.oborin.me/posts/jira-and-orange-pi/</loc>
     <lastmod>2018-05-01T10:58:57+02:00</lastmod>
   </url>
@@ -54,6 +59,12 @@
   </url>
   
   <url>
+    <loc>http://pavel.oborin.me/tags/go/</loc>
+    <lastmod>2018-05-12T10:58:57+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://pavel.oborin.me/tags/jira/</loc>
     <lastmod>2018-05-01T10:58:57+02:00</lastmod>
     <priority>0</priority>
@@ -73,13 +84,13 @@
   
   <url>
     <loc>http://pavel.oborin.me/</loc>
-    <lastmod>2018-05-01T10:58:57+02:00</lastmod>
+    <lastmod>2018-05-12T10:58:57+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://pavel.oborin.me/posts/</loc>
-    <lastmod>2018-05-01T10:58:57+02:00</lastmod>
+    <lastmod>2018-05-12T10:58:57+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -92,6 +103,12 @@
   <url>
     <loc>http://pavel.oborin.me/tags/</loc>
     <lastmod>2018-03-31T18:43:57+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://pavel.oborin.me/tags/william-kennedy/</loc>
+    <lastmod>2018-05-12T10:58:57+02:00</lastmod>
     <priority>0</priority>
   </url>
   
