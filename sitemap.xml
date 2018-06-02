@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://pavel.oborin.me/posts/tests-part1/</loc>
+    <lastmod>2018-06-01T18:43:57+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pavel.oborin.me/posts/go-bless-us/</loc>
     <lastmod>2018-05-12T10:58:57+02:00</lastmod>
   </url>
@@ -84,13 +89,13 @@
   
   <url>
     <loc>http://pavel.oborin.me/</loc>
-    <lastmod>2018-05-12T10:58:57+02:00</lastmod>
+    <lastmod>2018-06-01T18:43:57+05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://pavel.oborin.me/posts/</loc>
-    <lastmod>2018-05-12T10:58:57+02:00</lastmod>
+    <lastmod>2018-06-01T18:43:57+05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,8 +112,20 @@
   </url>
   
   <url>
+    <loc>http://pavel.oborin.me/tags/test/</loc>
+    <lastmod>2018-06-01T18:43:57+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://pavel.oborin.me/tags/william-kennedy/</loc>
     <lastmod>2018-05-12T10:58:57+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://pavel.oborin.me/tags/xunit/</loc>
+    <lastmod>2018-06-01T18:43:57+05:00</lastmod>
     <priority>0</priority>
   </url>
   

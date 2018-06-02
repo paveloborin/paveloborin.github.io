@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 May 2018 10:58:57 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 18:43:57 +0500</lastBuildDate>
     
 	<atom:link href="http://pavel.oborin.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Стратегия локального внедрения и ускорение автотестов.</title>
+      <link>http://pavel.oborin.me/posts/tests-part1/</link>
+      <pubDate>Fri, 01 Jun 2018 18:43:57 +0500</pubDate>
+      
+      <guid>http://pavel.oborin.me/posts/tests-part1/</guid>
+      <description>Вступление - О тестах - Описание локальной модели внедрения тестов - Практический разбор тестовой системы на примере - Ускорение функциональных тестов Вступление Сегодня тестирование при разработке программного обеспечения переместилось с некогда периферийных позиций на первый план, превратившись в одну из ее центральных частей. Если брать во внимание огромную сложность современных программных продуктов, то автотесты - это едва ли не единственная причина почему разработчики еще могут спокойно спать по ночам. Между тем для большинства разработчиков обучение написанию тестов до сих пор остается второстепенной задачей.</description>
+    </item>
     
     <item>
       <title>Да поможет нам Go. Базовые ценности и основы философии языка Go по мотивам курса Билла Кеннеди</title>
