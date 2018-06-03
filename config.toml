@@ -1,4 +1,4 @@
-baseURL = "http://pavel.oborin.me/"
+baseURL = "https://pavel.oborin.me"
 languageCode = "en-us"
 title = "Pavel Oborin"
 theme = "minimal"

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on Pavel Oborin</title>
-    <link>http://pavel.oborin.me/tags/security/</link>
+    <link>https://pavel.oborin.me/tags/security/</link>
     <description>Recent content in Security on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 31 Mar 2018 18:43:57 +0500</lastBuildDate>
     
-	<atom:link href="http://pavel.oborin.me/tags/security/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pavel.oborin.me/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GDPR краткий обзор. Мысли и рекомендации</title>
-      <link>http://pavel.oborin.me/posts/gdpr/</link>
+      <link>https://pavel.oborin.me/posts/gdpr/</link>
       <pubDate>Sat, 31 Mar 2018 18:43:57 +0500</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/gdpr/</guid>
+      <guid>https://pavel.oborin.me/posts/gdpr/</guid>
       <description>С 26 мая 2018 г. вступает в силу GDPR новый европейский закон о защите персональных данных.
 Хорошее представление о законе могут дать первоисточник :) и аналитика от Института Исследования Интернета
 О GDPR и его значении Закон предъявляет целый ряд существенных требований к обработке персональных данных жителей Евросоюза (точнее любого человека, находящегося на территории ЕС). Нарушение требований будет &amp;ldquo;караться&amp;rdquo; большими штрафами (озвучена цифра в 20 млн евро), потерей репутации и, возможно, запретом на работу на европейском рынке, а также уголовной ответственностью.</description>

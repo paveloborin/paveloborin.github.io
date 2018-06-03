@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Pavel Oborin</title>
-    <link>http://pavel.oborin.me/posts/</link>
+    <link>https://pavel.oborin.me/posts/</link>
     <description>Recent content in Posts on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Jun 2018 18:43:57 +0500</lastBuildDate>
     
-	<atom:link href="http://pavel.oborin.me/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pavel.oborin.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>О тестировании. Стратегия очагового внедрения автотестов. Способы ускорения функциональных тестов. Часть I</title>
-      <link>http://pavel.oborin.me/posts/tests-part1/</link>
+      <link>https://pavel.oborin.me/posts/tests-part1/</link>
       <pubDate>Fri, 01 Jun 2018 18:43:57 +0500</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/tests-part1/</guid>
+      <guid>https://pavel.oborin.me/posts/tests-part1/</guid>
       <description>Вступление - О тестах - Описание очаговой модели внедрения тестов - Практический разбор тестовой системы на примере - Ускорение функциональных тестов Вступление Сегодня тестирование при разработке программного обеспечения переместилось с некогда периферийных позиций на первый план, превратившись в одну из ее центральных частей. Если брать во внимание огромную сложность современных программных продуктов, то автотесты - это едва ли не единственная причина почему разработчики еще могут спокойно спать по ночам. Между тем для большинства разработчиков обучение написанию тестов до сих пор остается второстепенной задачей.</description>
     </item>
     
     <item>
       <title>Да поможет нам Go. Базовые ценности и основы философии языка Go по мотивам курса Билла Кеннеди</title>
-      <link>http://pavel.oborin.me/posts/go-bless-us/</link>
+      <link>https://pavel.oborin.me/posts/go-bless-us/</link>
       <pubDate>Sat, 12 May 2018 10:58:57 +0200</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/go-bless-us/</guid>
+      <guid>https://pavel.oborin.me/posts/go-bless-us/</guid>
       <description>Аннотация Заметка строится вокруг первой лекции курса Билла Кеннеди (William Kennedy) “Ultimate Go Programming” доступного на safaribook (https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/). Меня настолько воодушевил данный курс, что показалось интересным сделать некую выжимку своего конспекта по этим лекциям.
 Предугадывая возможную негативную реакцию, поспешу заметить, что конечно любой человек на вопрос что он предпочтет: послушать лекцию человека, совершившего некое открытие, или лектора, который ничего не открыл, но построил свою лекцию на описании чужого открытия, выбрал бы первое.</description>
     </item>
     
     <item>
       <title>Система индивидуального планирования за 3000 руб на базе Orange Pi и Jira</title>
-      <link>http://pavel.oborin.me/posts/jira-and-orange-pi/</link>
+      <link>https://pavel.oborin.me/posts/jira-and-orange-pi/</link>
       <pubDate>Tue, 01 May 2018 10:58:57 +0200</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/jira-and-orange-pi/</guid>
+      <guid>https://pavel.oborin.me/posts/jira-and-orange-pi/</guid>
       <description>Аннотация Данная заметка посвящена дальнейшему развитию идеи использования JIRA в качестве системы для индивидуального планирования, описанной мною ранее. А именно я бы хотел поделиться опытом развертывания этой системы на платформе Orange Pi.
 Вступление В начале года я стал активно использовать JIRA для индивидуального планирования. Что сразу отозвалось повышением моей личной производителньости. Через пару месяцев я решил, что старый ноутбук для этого не самое лучшее решение и можно сделать лучше.</description>
     </item>
     
     <item>
       <title>GDPR краткий обзор. Мысли и рекомендации</title>
-      <link>http://pavel.oborin.me/posts/gdpr/</link>
+      <link>https://pavel.oborin.me/posts/gdpr/</link>
       <pubDate>Sat, 31 Mar 2018 18:43:57 +0500</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/gdpr/</guid>
+      <guid>https://pavel.oborin.me/posts/gdpr/</guid>
       <description>С 26 мая 2018 г. вступает в силу GDPR новый европейский закон о защите персональных данных.
 Хорошее представление о законе могут дать первоисточник :) и аналитика от Института Исследования Интернета
 О GDPR и его значении Закон предъявляет целый ряд существенных требований к обработке персональных данных жителей Евросоюза (точнее любого человека, находящегося на территории ЕС). Нарушение требований будет &amp;ldquo;караться&amp;rdquo; большими штрафами (озвучена цифра в 20 млн евро), потерей репутации и, возможно, запретом на работу на европейском рынке, а также уголовной ответственностью.</description>
@@ -53,10 +53,10 @@
     
     <item>
       <title>Jira в качестве индивидуального планировщика</title>
-      <link>http://pavel.oborin.me/posts/jira-for-individual-use/</link>
+      <link>https://pavel.oborin.me/posts/jira-for-individual-use/</link>
       <pubDate>Wed, 31 Jan 2018 08:53:40 +0500</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/jira-for-individual-use/</guid>
+      <guid>https://pavel.oborin.me/posts/jira-for-individual-use/</guid>
       <description>Jira в качестве индивидуального планировщика “А время уходит, жизнь твоя тратится на ерунду” (с)
 Аннотация В статье описан опыт использование JIRA в качестве системы индивидуального планирования. Автор рассказывает о предпосылках в пользу такого выбора, описывает процедуру установки и дает советы по использованию.
 Предыстория За неделю до Нового года я решил подвести итоги своей работы за уходящий год. Такие итоги позволяют получить более целостную картину своих результатов, и по ней дать оценку своей работе, проанализировать неудачи, выявить слабые стороны, над которыми нужно работать, и тп.</description>
@@ -64,19 +64,19 @@
     
     <item>
       <title>Размышление о разработчиках</title>
-      <link>http://pavel.oborin.me/posts/village-programmers/</link>
+      <link>https://pavel.oborin.me/posts/village-programmers/</link>
       <pubDate>Mon, 11 Dec 2017 22:42:10 +0500</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/village-programmers/</guid>
+      <guid>https://pavel.oborin.me/posts/village-programmers/</guid>
       <description>Размышление о разработчиках Недавно моя сестра решила сделать ремонт у себя в ванной и наняла человека, целиком положившишь на рекомендации одной своей знакомой. В итоге этот человек допустил все грубейшие ошибки какие только было можно: установил унитаз высоко и не по центру туалета, сделал трубу слива в ванной выше уровня слива самой ванной, двери в ванной и в туалете разной высоты. Сестра отдала за работу свой месячный оклад и две недели времени на контроль за исправлением (расстаться с “мастером” и нанять нового выходило уже намного дороже запланированного бюджета).</description>
     </item>
     
     <item>
       <title>Краткое введение в безопасность приложений</title>
-      <link>http://pavel.oborin.me/posts/introduction-to-application-security/</link>
+      <link>https://pavel.oborin.me/posts/introduction-to-application-security/</link>
       <pubDate>Thu, 26 Oct 2017 17:53:40 +0500</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/introduction-to-application-security/</guid>
+      <guid>https://pavel.oborin.me/posts/introduction-to-application-security/</guid>
       <description>Краткое введение в безопасность приложений Перевод статьи Scott Arciszewski «A Gentle Introduction to Application Security». Вступление У меня есть печальные новости для программистов, читающих эту заметку. Но, забегая вперед, сразу скажу что нет худа без добра.
 Новость первая: если вы являетесь веб-разработчиком или только размышляете о том, чтобы начать изучать веб-разработку, то, вероятнее всего, вы не думаете о себе как о специалисте по безопасности. Может быть, вы принимаете во внимание некоторые угрозы безопасности, например, при валидации пользовательских данных.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Orange Pi on Pavel Oborin</title>
-    <link>http://pavel.oborin.me/tags/orange-pi/</link>
+    <link>https://pavel.oborin.me/tags/orange-pi/</link>
     <description>Recent content in Orange Pi on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 May 2018 10:58:57 +0200</lastBuildDate>
     
-	<atom:link href="http://pavel.oborin.me/tags/orange-pi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pavel.oborin.me/tags/orange-pi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Система индивидуального планирования за 3000 руб на базе Orange Pi и Jira</title>
-      <link>http://pavel.oborin.me/posts/jira-and-orange-pi/</link>
+      <link>https://pavel.oborin.me/posts/jira-and-orange-pi/</link>
       <pubDate>Tue, 01 May 2018 10:58:57 +0200</pubDate>
       
-      <guid>http://pavel.oborin.me/posts/jira-and-orange-pi/</guid>
+      <guid>https://pavel.oborin.me/posts/jira-and-orange-pi/</guid>
       <description>Аннотация Данная заметка посвящена дальнейшему развитию идеи использования JIRA в качестве системы для индивидуального планирования, описанной мною ранее. А именно я бы хотел поделиться опытом развертывания этой системы на платформе Orange Pi.
 Вступление В начале года я стал активно использовать JIRA для индивидуального планирования. Что сразу отозвалось повышением моей личной производителньости. Через пару месяцев я решил, что старый ноутбук для этого не самое лучшее решение и можно сделать лучше.</description>
     </item>
