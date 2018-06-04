@@ -2,7 +2,7 @@
 title: "Инструменты для форматирования и анализа кода в Go"
 date: 2018-06-04T02:43:57+05:00
 draft: false
-tags: ["go", "tools"]
+tags: ["go", "tools", "goimports", "errcheck", "gometalinter"]
 ---
 
 
@@ -41,7 +41,7 @@ $ errcheck ./…
 $ go get -u github.com/kisielk/errcheck
 </code>
 
-## Анализ кода по множеству параметров:
+## Анализ кода по множеству параметров
 
 Использование:
 

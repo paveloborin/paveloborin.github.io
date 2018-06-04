@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Mar 2018 18:43:57 +0500</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jun 2018 02:43:57 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Errcheck</title>
+      <link>https://pavel.oborin.me/tags/errcheck/</link>
+      <pubDate>Mon, 04 Jun 2018 02:43:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/tags/errcheck/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Gdpr</title>
@@ -26,6 +35,24 @@
       <pubDate>Mon, 04 Jun 2018 02:43:57 +0500</pubDate>
       
       <guid>https://pavel.oborin.me/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Goimports</title>
+      <link>https://pavel.oborin.me/tags/goimports/</link>
+      <pubDate>Mon, 04 Jun 2018 02:43:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/tags/goimports/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gometalinter</title>
+      <link>https://pavel.oborin.me/tags/gometalinter/</link>
+      <pubDate>Mon, 04 Jun 2018 02:43:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/tags/gometalinter/</guid>
       <description></description>
     </item>
     
