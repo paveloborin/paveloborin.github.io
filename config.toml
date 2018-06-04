@@ -18,7 +18,7 @@ googleAnalytics = "UA-116728151-1"
     font = "Raleway" # should match the name on Google Fonts!
     highlight = true
     highlightStyle = "solarized-dark"
-    highlightLanguages = ["php", "mysql","go"]
+    highlightLanguages = ["php","go"]
     authorimage = 'headshot.png'
 
 [[menu.main]]
