@@ -10,36 +10,50 @@ tags: ["go", "tools"]
 
 Использование:
 
-goimports -d -w $(find . -type f -name '*.go' -not -path "./vendor/*")
+<code class="hljs haskell">
+$ goimports -d -w $(find . -type f -name '*.go' -not -path "./vendor/*")
+</code>
 
 Установка:
-
-go get golang.org/x/tools/cmd/goimports
+<code class="hljs haskell">
+$ go get golang.org/x/tools/cmd/goimports
+</code>
 
 ## Автоформатирование кода
 
 Использование:
 
-go fmt ./…
+<code class="hljs haskell">
+$ go fmt ./…
+</code>
 
 ## Анализ корректной обработки ошибок
 
 Использование:
 
-errcheck ./…
+<code class="hljs haskell">
+$ errcheck ./…
+</code>
 
 Установка:
 
-go get -u github.com/kisielk/errcheck
+<code class="hljs haskell">
+$ go get -u github.com/kisielk/errcheck
+</code>
 
 ## Анализ кода по множеству параметров:
 
 Использование:
 
-gometalinter ./… --exclude=vendor
+<code class="hljs haskell">
+$ gometalinter ./… --exclude=vendor
+</code>
 
 Установка:
 
-go get -u gopkg.in/alecthomas/gometalinter.v2
+<code class="hljs haskell">
+$ go get -u gopkg.in/alecthomas/gometalinter.v2
+<br/>
+$ gometalinter --install
+</code>
 
-gometalinter --install

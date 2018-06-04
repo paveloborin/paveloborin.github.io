@@ -41,7 +41,7 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script> 
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sh.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script> 
 
     <script>hljs.initHighlightingOnLoad();</script>
 
@@ -159,39 +159,52 @@
 
 <p>Использование:</p>
 
-<p>goimports -d -w $(find . -type f -name &lsquo;<em>.go&rsquo; -not -path &ldquo;./vendor/</em>&rdquo;)</p>
+<p><code class="hljs haskell">
+$ goimports -d -w $(find . -type f -name &lsquo;<em>.go&rsquo; -not -path &ldquo;./vendor/</em>&rdquo;)
+</code></p>
 
-<p>Установка:</p>
-
-<p>go get golang.org/x/tools/cmd/goimports</p>
+<p>Установка:
+<code class="hljs haskell">
+$ go get golang.org/x/tools/cmd/goimports
+</code></p>
 
 <h2 id="автоформатирование-кода">Автоформатирование кода</h2>
 
 <p>Использование:</p>
 
-<p>go fmt ./…</p>
+<p><code class="hljs haskell">
+$ go fmt ./…
+</code></p>
 
 <h2 id="анализ-корректной-обработки-ошибок">Анализ корректной обработки ошибок</h2>
 
 <p>Использование:</p>
 
-<p>errcheck ./…</p>
+<p><code class="hljs haskell">
+$ errcheck ./…
+</code></p>
 
 <p>Установка:</p>
 
-<p>go get -u github.com/kisielk/errcheck</p>
+<p><code class="hljs haskell">
+$ go get -u github.com/kisielk/errcheck
+</code></p>
 
 <h2 id="анализ-кода-по-множеству-параметров">Анализ кода по множеству параметров:</h2>
 
 <p>Использование:</p>
 
-<p>gometalinter ./… &ndash;exclude=vendor</p>
+<p><code class="hljs haskell">
+$ gometalinter ./… &ndash;exclude=vendor
+</code></p>
 
 <p>Установка:</p>
 
-<p>go get -u gopkg.in/alecthomas/gometalinter.v2</p>
-
-<p>gometalinter &ndash;install</p>
+<p><code class="hljs haskell">
+$ go get -u gopkg.in/alecthomas/gometalinter.v2
+<br/>
+$ gometalinter &ndash;install
+</code></p>
 </div>
 
     

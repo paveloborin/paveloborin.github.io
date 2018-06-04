@@ -18,20 +18,18 @@
       
       <guid>https://pavel.oborin.me/posts/go-tools/</guid>
       <description>Форматирование импортов Использование:
-goimports -d -w $(find . -type f -name &amp;lsquo;.go&amp;rsquo; -not -path &amp;ldquo;./vendor/&amp;rdquo;)
-Установка:
-go get golang.org/x/tools/cmd/goimports
+$ goimports -d -w $(find . -type f -name &amp;lsquo;.go&amp;rsquo; -not -path &amp;ldquo;./vendor/&amp;rdquo;) 
+Установка: $ go get golang.org/x/tools/cmd/goimports 
 Автоформатирование кода Использование:
-go fmt ./…
+$ go fmt ./… 
 Анализ корректной обработки ошибок Использование:
-errcheck ./…
+$ errcheck ./… 
 Установка:
-go get -u github.com/kisielk/errcheck
+$ go get -u github.com/kisielk/errcheck 
 Анализ кода по множеству параметров: Использование:
-gometalinter ./… &amp;ndash;exclude=vendor
+$ gometalinter ./… &amp;ndash;exclude=vendor 
 Установка:
-go get -u gopkg.in/alecthomas/gometalinter.v2
-gometalinter &amp;ndash;install</description>
+$ go get -u gopkg.in/alecthomas/gometalinter.v2  $ gometalinter &amp;ndash;install</description>
     </item>
     
   </channel>

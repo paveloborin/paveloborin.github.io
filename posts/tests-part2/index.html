@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Стратегия очагового внедрения автотестов. Часть II: Концепция очаговой модели внедрения тестов</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://pavel.oborin.me/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sh.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.41" />
+        
+        
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116728151-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-116728151-1');
+        </script>
+        
+    </head>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Стратегия очагового внедрения автотестов. Часть II: Концепция очаговой модели внедрения тестов</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                                <li><a href="https://github.com/paveloborin">GITHUB</a></li>
+                            
+                                <li><a href="https://www.visualcv.com/pavel-oborin">CV</a></li>
+                            
+                                <li><a href="/just-for-fan/">Just For fans</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:me@pavel.oborin.me"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/paveloborin"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/paveloborin"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/7936172/pavel-oborin"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://scholar.google.ru/citations?user=sR8RU10AAAAJ"><i class="fa fa-graduation-cap"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://habrahabr.ru/users/paveloborin/"><i class="fa fa-header"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/posts/tests-part2/">Стратегия очагового внедрения автотестов. Часть II: Концепция очаговой модели внедрения тестов</a></h4>
+    <h5>June 4, 2018</h5>
+     <kbd class="item-tag">test</kbd>  <kbd class="item-tag">xUnit</kbd> 
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p><a href="https://pavel.oborin.me/posts/tests-part1/">Перейти к первой части</a></p>
+
+<h5 id="распространение-тестов-в-системе-очаговая-модель-как-паттерн-распространения-тестов-в-системе"><em>Распространение тестов в системе - Очаговая модель, как паттерн распространения тестов в системе</em></h5>
+
+<h3 id="концепция-очаговой-модели-внедрения-тестов">Концепция очаговой модели внедрения тестов</h3>
+
+<p>Я не ставлю перед собой цель осветить все вопросы и ошибки при встраивании тестов в уже работающую систему.
+Основная моя задача обсудить такую распространенную ошибку как применение «<em>тактики единого центра»</em> при добавлении тестов в систему, когда код всех подсистем переносится, прирастая к некой единой базе.</p>
+
+<p>Рассмотрим пример. Допустим у вас есть три подсистемы:</p>
+
+<p><em>Система А: Полностью покрыта тестами, своеобразный эталон.</em></p>
+
+<p><em>Система Б: Система с большой долей легаси кода, частично покрыта тестами.</em></p>
+
+<p><em>Система С: Очень древний код, но при этом активно задействованный. Тесты отсутствуют.</em></p>
+
+<p>Исторически эти системы развивались более менее самостоятельно, но сейчас пришел момент, когда они логически должны слиться в одну.</p>
+
+<p>Многие начнут решать эту задачу с перемещения кода систем Б и С в А; улучшения его посредством рефакторинга до уровня А и после чего приступить к переписыванию тестов в системе Б и созданию новых на С того же уровня и с той же «базой», что существующие тесты для А.</p>
+
+<p>Я считаю такую практику &ldquo;приращения&rdquo; ошибочной и порочной.
+<em>«Тактика единого центра»</em> приводит к своего рода эффекту “накопления усталости” - неизбежному переносу неправильных архитектурных решений из тестируемых подсистем (ведь тесты в каком-то смысле являются отражением тестируемого кода) в саму архитектуру тестовой системы и последующее умножению их друг на друга.
+Также такая стратегия приводит к затягиванию цикла разработки с большой вероятностью вообще никогда ее не закончить.</p>
+
+<p>На мой взгляд более плодотворным является вариант, когда подсистемы образуют своеобразное множество независимых центров роста, которые постепенно со временем сольются в один. При этом подходе тесты во всех подсистемах развиваются параллельно. Я назвал эту стратегию «<em>очаговой»</em>.</p>
+
+<p>Как мне кажется, очень хорошо отражает основную суть предлагаемой мною модели фотография с чашкой Петри представленная ниже.</p>
+
+<p><span style="display:block;text-align:center">
+<img src="/static/petri.png" width="450px">
+<br>Рис. 1 Чашка Петри с высеянной в ней культурой плесени, как модель очаговой стратегии внедрения тестов
+</span></p>
+
+<p>В очаговой модели внедрения тестов тестовые системы являются подобием спор в чашке Петри, которыми разработчик &ldquo;заражает&rdquo; свой код, после чего споры будут постепенно разрастаться на всей системе, до тех пор пока не охватят всю ее целиком.  После того, как процесс покрытия системы завершен и состояние системы жестко зафиксировано, начинается приведение всех тестов и кода к единому стандарту.</p>
+
+<p>Пожалуй, основным недостатком такого подхода является дублирования кода базовых классов тестовых подсистем. Но на самом деле дублирование - это не самый страшный «грех», в любом случае в дальнейшем для устранения образовавшегося дублирования можно объединить все тестовые подсистемы в одну.</p>
+
+<p>В очаговой модели за счет дублирования на первоначальном этапе мы обеспечиваем себе такие преимущества как: независимость, автономность, инкапсуляцию, простоту управления, контроль, широкие возможности для развития.</p>
+
+<p>Продолжая аналогию чашки Петри, в которой происходит распространение споровой культуры с общей ДНК, в очаговой модели нам нужна некая основа с хорошей и универсальной базой для независимого развертывания тестов, которой мы будем &ldquo;заражать&rdquo; наш код.</p>
+
+<p>Основные требования к такой базе:</p>
+
+<ul>
+<li><p>независимое, самостоятельное, повторно используемое решение способное существовать и развиваться изолированно; в нем должно быть заложено все, чтобы из него могла развиться полноценная тестовая система и в тоже время решение должно быть &ldquo;чистым&rdquo;, минималистичным и ненагруженным лишним кодом.</p></li>
+
+<li><p>универсальное решение - пригодное для покрытия тестами любых систем,</p></li>
+
+<li><p>высокое юзабилити, удобство, понятность, простота освоения и интеграции с CI из коробки.</p></li>
+</ul>
+
+<p>Таким штаммом для развертывания тестов должен стать минимальный набор кода, который можно было за пару минут развернуть в любой директории и в дальнейшем так же легко добавить в автоматический запуск на CI. Такой набор состоит из тестового фреймворка Xunit и некой своей базовой надстройка.</p>
+
+<h4 id="очаговая-модель-и-существующие-тесты">Очаговая модель и существующие тесты:</h4>
+
+<p>Если в системе уже есть тесты, то я рекомендую оставить существующие тесты; развернуть параллельную систему тестов и постепенно переносить тесты один за другим в нее. Преимущества такого подхода заключаются в том, что, во первых, ваша система не остается без тестов, во вторых старые тесты не теряются, в третьих процесс переноса тестов может быть постепенным: переработали тест - задеплоили, не нужно готовить какой-то большой релиз, в четвертых, можно одновременно писать и сразу же запускать в работу новые тесты.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved.</p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

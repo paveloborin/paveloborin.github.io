@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Jun 2018 02:43:57 +0500</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jun 2018 15:41:57 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Стратегия очагового внедрения автотестов. Часть II: Концепция очаговой модели внедрения тестов</title>
+      <link>https://pavel.oborin.me/posts/tests-part2/</link>
+      <pubDate>Mon, 04 Jun 2018 15:41:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/tests-part2/</guid>
+      <description>Перейти к первой части
+Распространение тестов в системе - Очаговая модель, как паттерн распространения тестов в системе Концепция очаговой модели внедрения тестов Я не ставлю перед собой цель осветить все вопросы и ошибки при встраивании тестов в уже работающую систему. Основная моя задача обсудить такую распространенную ошибку как применение «тактики единого центра» при добавлении тестов в систему, когда код всех подсистем переносится, прирастая к некой единой базе.
+Рассмотрим пример. Допустим у вас есть три подсистемы:</description>
+    </item>
     
     <item>
       <title>Инструменты для форматирования и анализа кода в Go</title>
@@ -18,24 +29,22 @@
       
       <guid>https://pavel.oborin.me/posts/go-tools/</guid>
       <description>Форматирование импортов Использование:
-goimports -d -w $(find . -type f -name &amp;lsquo;.go&amp;rsquo; -not -path &amp;ldquo;./vendor/&amp;rdquo;)
-Установка:
-go get golang.org/x/tools/cmd/goimports
+$ goimports -d -w $(find . -type f -name &amp;lsquo;.go&amp;rsquo; -not -path &amp;ldquo;./vendor/&amp;rdquo;) 
+Установка: $ go get golang.org/x/tools/cmd/goimports 
 Автоформатирование кода Использование:
-go fmt ./…
+$ go fmt ./… 
 Анализ корректной обработки ошибок Использование:
-errcheck ./…
+$ errcheck ./… 
 Установка:
-go get -u github.com/kisielk/errcheck
+$ go get -u github.com/kisielk/errcheck 
 Анализ кода по множеству параметров: Использование:
-gometalinter ./… &amp;ndash;exclude=vendor
+$ gometalinter ./… &amp;ndash;exclude=vendor 
 Установка:
-go get -u gopkg.in/alecthomas/gometalinter.v2
-gometalinter &amp;ndash;install</description>
+$ go get -u gopkg.in/alecthomas/gometalinter.v2  $ gometalinter &amp;ndash;install</description>
     </item>
     
     <item>
-      <title>Стратегия очагового внедрения автотестов. Часть I: О роли тестиварония</title>
+      <title>Стратегия очагового внедрения автотестов. Часть I: О роли тестирования</title>
       <link>https://pavel.oborin.me/posts/tests-part1/</link>
       <pubDate>Fri, 01 Jun 2018 18:43:57 +0500</pubDate>
       
