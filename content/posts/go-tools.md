@@ -32,7 +32,7 @@ $ go fmt ./…
 Использование:
 
 <code class="shell hljs">
-<span class="hljs-meta">$</span> <span class="bash">errcheck ./…</span>
+<span class="hljs-meta">$</span> <span class="bash">errcheck</span> <span class="hljs-string">./...</span>
 </code>
 
 Установка:

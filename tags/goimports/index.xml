@@ -23,7 +23,7 @@ $ goimports -d -w $(find . -type f -name &amp;lsquo;.go&amp;rsquo; -not -path &a
 Автоформатирование кода Использование:
 $ go fmt ./… 
 Анализ корректной обработки ошибок Использование:
-$ errcheck ./… 
+$ errcheck ./&amp;hellip; 
 Установка:
 $ go get -u github.com/kisielk/errcheck 
 Анализ кода по множеству параметров Использование:
