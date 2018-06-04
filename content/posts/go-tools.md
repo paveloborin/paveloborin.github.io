@@ -31,7 +31,7 @@ $ go fmt ./…
 
 Использование:
 
-<code class="hljs shell">
+<code class="shell hljs">
 $ errcheck ./…
 </code>
 
