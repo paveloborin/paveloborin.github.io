@@ -10,12 +10,12 @@ tags: ["go", "tools", "goimports", "errcheck", "gometalinter"]
 
 Использование:
 
-<code class="hljs haskell">
+<code class="hljs shell">
 $ goimports -d -w $(find . -type f -name '*.go' -not -path "./vendor/*")
 </code>
 
 Установка:
-<code class="hljs haskell">
+<code class="hljs shell">
 $ go get golang.org/x/tools/cmd/goimports
 </code>
 
@@ -23,7 +23,7 @@ $ go get golang.org/x/tools/cmd/goimports
 
 Использование:
 
-<code class="hljs haskell">
+<code class="hljs shell">
 $ go fmt ./…
 </code>
 
@@ -31,13 +31,13 @@ $ go fmt ./…
 
 Использование:
 
-<code class="hljs haskell">
+<code class="hljs shell">
 $ errcheck ./…
 </code>
 
 Установка:
 
-<code class="hljs haskell">
+<code class="hljs shell">
 $ go get -u github.com/kisielk/errcheck
 </code>
 
@@ -45,13 +45,13 @@ $ go get -u github.com/kisielk/errcheck
 
 Использование:
 
-<code class="hljs haskell">
+<code class="hljs shell">
 $ gometalinter ./… --exclude=vendor
 </code>
 
 Установка:
 
-<code class="hljs haskell">
+<code class="hljs shell">
 $ go get -u gopkg.in/alecthomas/gometalinter.v2
 <br/>
 $ gometalinter --install

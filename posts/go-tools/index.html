@@ -41,7 +41,7 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sh.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script> 
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script> 
 
     <script>hljs.initHighlightingOnLoad();</script>
 
@@ -160,12 +160,12 @@
 
 <p>Использование:</p>
 
-<p><code class="hljs haskell">
+<p><code class="hljs shell">
 $ goimports -d -w $(find . -type f -name &lsquo;<em>.go&rsquo; -not -path &ldquo;./vendor/</em>&rdquo;)
 </code></p>
 
 <p>Установка:
-<code class="hljs haskell">
+<code class="hljs shell">
 $ go get golang.org/x/tools/cmd/goimports
 </code></p>
 
@@ -173,7 +173,7 @@ $ go get golang.org/x/tools/cmd/goimports
 
 <p>Использование:</p>
 
-<p><code class="hljs haskell">
+<p><code class="hljs shell">
 $ go fmt ./…
 </code></p>
 
@@ -181,13 +181,13 @@ $ go fmt ./…
 
 <p>Использование:</p>
 
-<p><code class="hljs haskell">
+<p><code class="hljs shell">
 $ errcheck ./…
 </code></p>
 
 <p>Установка:</p>
 
-<p><code class="hljs haskell">
+<p><code class="hljs shell">
 $ go get -u github.com/kisielk/errcheck
 </code></p>
 
@@ -195,13 +195,13 @@ $ go get -u github.com/kisielk/errcheck
 
 <p>Использование:</p>
 
-<p><code class="hljs haskell">
+<p><code class="hljs shell">
 $ gometalinter ./… &ndash;exclude=vendor
 </code></p>
 
 <p>Установка:</p>
 
-<p><code class="hljs haskell">
+<p><code class="hljs shell">
 $ go get -u gopkg.in/alecthomas/gometalinter.v2
 <br/>
 $ gometalinter &ndash;install
