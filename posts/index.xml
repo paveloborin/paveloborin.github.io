@@ -6,10 +6,33 @@
     <description>Recent content in Posts on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jun 2018 18:43:57 +0500</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jun 2018 02:43:57 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Инструменты для форматирования и анализа кода в Go</title>
+      <link>https://pavel.oborin.me/posts/go-tools/</link>
+      <pubDate>Mon, 04 Jun 2018 02:43:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/go-tools/</guid>
+      <description>Форматирование импортов Использование:
+goimports -d -w $(find . -type f -name &amp;lsquo;.go&amp;rsquo; -not -path &amp;ldquo;./vendor/&amp;rdquo;)
+Установка:
+go get golang.org/x/tools/cmd/goimports
+Автоформатирование кода Использование:
+go fmt ./…
+Анализ корректной обработки ошибок Использование:
+errcheck ./…
+Установка:
+go get -u github.com/kisielk/errcheck
+Анализ кода по множеству параметров: Использование:
+gometalinter ./… &amp;ndash;exclude=vendor
+Установка:
+go get -u gopkg.in/alecthomas/gometalinter.v2
+gometalinter &amp;ndash;install</description>
+    </item>
     
     <item>
       <title>О тестировании. Стратегия очагового внедрения автотестов. Способы ускорения функциональных тестов. Часть I</title>
