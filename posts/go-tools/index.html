@@ -161,12 +161,12 @@
 <p>Использование:</p>
 
 <p><code class="hljs shell">
-$ goimports -d -w $(find . -type f -name &lsquo;<em>.go&rsquo; -not -path &ldquo;./vendor/</em>&rdquo;)
+<span class="hljs-meta">$</span> goimports -d -w $(find . -type f -name &lsquo;<em>.go&rsquo; -not -path &ldquo;./vendor/</em>&rdquo;)
 </code></p>
 
 <p>Установка:
 <code class="hljs shell">
-$ go get golang.org/x/tools/cmd/goimports
+<span class="hljs-meta">$</span> go get golang.org/x/tools/cmd/goimports
 </code></p>
 
 <h2 id="автоформатирование-кода">Автоформатирование кода</h2>
@@ -174,7 +174,7 @@ $ go get golang.org/x/tools/cmd/goimports
 <p>Использование:</p>
 
 <p><code class="hljs shell">
-$ go fmt ./…
+<span class="hljs-meta">$</span> go fmt <span class="hljs-string">./&hellip;</span>
 </code></p>
 
 <h2 id="анализ-корректной-обработки-ошибок">Анализ корректной обработки ошибок</h2>
@@ -188,7 +188,7 @@ $ go fmt ./…
 <p>Установка:</p>
 
 <p><code class="hljs shell">
-$ go get -u github.com/kisielk/errcheck
+<span class="hljs-meta">$</span> go get -u github.com/kisielk/errcheck
 </code></p>
 
 <h2 id="анализ-кода-по-множеству-параметров">Анализ кода по множеству параметров</h2>
@@ -196,15 +196,15 @@ $ go get -u github.com/kisielk/errcheck
 <p>Использование:</p>
 
 <p><code class="hljs shell">
-$ gometalinter ./… &ndash;exclude=vendor
+<span class="hljs-meta">$</span> gometalinter <span class="hljs-string">./&hellip;</span> &ndash;exclude=vendor
 </code></p>
 
 <p>Установка:</p>
 
 <p><code class="hljs shell">
-$ go get -u gopkg.in/alecthomas/gometalinter.v2
+<span class="hljs-meta">$</span> go get -u gopkg.in/alecthomas/gometalinter.v2
 <br/>
-$ gometalinter &ndash;install
+<span class="hljs-meta">$</span> gometalinter &ndash;install
 </code></p>
 </div>
 

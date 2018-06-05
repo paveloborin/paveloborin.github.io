@@ -11,12 +11,12 @@ tags: ["go", "tools", "goimports", "errcheck", "gometalinter"]
 Использование:
 
 <code class="hljs shell">
-$ goimports -d -w $(find . -type f -name '*.go' -not -path "./vendor/*")
+<span class="hljs-meta">$</span> goimports -d -w $(find . -type f -name '*.go' -not -path "./vendor/*")
 </code>
 
 Установка:
 <code class="hljs shell">
-$ go get golang.org/x/tools/cmd/goimports
+<span class="hljs-meta">$</span> go get golang.org/x/tools/cmd/goimports
 </code>
 
 ## Автоформатирование кода
@@ -24,7 +24,7 @@ $ go get golang.org/x/tools/cmd/goimports
 Использование:
 
 <code class="hljs shell">
-$ go fmt ./…
+<span class="hljs-meta">$</span> go fmt <span class="hljs-string">./...</span>
 </code>
 
 ## Анализ корректной обработки ошибок
@@ -38,7 +38,7 @@ $ go fmt ./…
 Установка:
 
 <code class="hljs shell">
-$ go get -u github.com/kisielk/errcheck
+<span class="hljs-meta">$</span> go get -u github.com/kisielk/errcheck
 </code>
 
 ## Анализ кода по множеству параметров
@@ -46,14 +46,14 @@ $ go get -u github.com/kisielk/errcheck
 Использование:
 
 <code class="hljs shell">
-$ gometalinter ./… --exclude=vendor
+<span class="hljs-meta">$</span> gometalinter <span class="hljs-string">./...</span> --exclude=vendor
 </code>
 
 Установка:
 
 <code class="hljs shell">
-$ go get -u gopkg.in/alecthomas/gometalinter.v2
+<span class="hljs-meta">$</span> go get -u gopkg.in/alecthomas/gometalinter.v2
 <br/>
-$ gometalinter --install
+<span class="hljs-meta">$</span> gometalinter --install
 </code>
 

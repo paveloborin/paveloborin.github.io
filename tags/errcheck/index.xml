@@ -21,13 +21,13 @@
 $ goimports -d -w $(find . -type f -name &amp;lsquo;.go&amp;rsquo; -not -path &amp;ldquo;./vendor/&amp;rdquo;) 
 Установка: $ go get golang.org/x/tools/cmd/goimports 
 Автоформатирование кода Использование:
-$ go fmt ./… 
+$ go fmt ./&amp;hellip; 
 Анализ корректной обработки ошибок Использование:
 $ errcheck ./&amp;hellip; 
 Установка:
 $ go get -u github.com/kisielk/errcheck 
 Анализ кода по множеству параметров Использование:
-$ gometalinter ./… &amp;ndash;exclude=vendor 
+$ gometalinter ./&amp;hellip; &amp;ndash;exclude=vendor 
 Установка:
 $ go get -u gopkg.in/alecthomas/gometalinter.v2  $ gometalinter &amp;ndash;install</description>
     </item>
