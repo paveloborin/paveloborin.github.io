@@ -1,5 +1,5 @@
 baseURL = "https://pavel.oborin.me"
-languageCode = "en-us"
+languageCode = "ru-RU"
 title = "Pavel Oborin"
 theme = "minimal"
 tags = ["tags", "categories"]
