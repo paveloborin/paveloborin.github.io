@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>О Разработке on Pavel Oborin</title>
+    <link>https://pavel.oborin.me/tags/%D0%BE-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B5/</link>
+    <description>Recent content in О Разработке on Pavel Oborin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Sat, 09 Jun 2018 09:54:57 +0500</lastBuildDate>
+    
+	<atom:link href="https://pavel.oborin.me/tags/%D0%BE-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Один опыт выкатывания большой фичи</title>
+      <link>https://pavel.oborin.me/posts/upgrade/</link>
+      <pubDate>Sat, 09 Jun 2018 09:54:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/upgrade/</guid>
+      <description>Вступление В статье я хочу поделиться своим опытом выкатывания большой фичи, которую можно рассматривать как апгрейд сложной системы, и уроками, которые мне удалось извлечь из этого опыта.
+Статья состоит из трех частей и заключения. В первой я рассказываю о типах развития программных продуктов и о том, насколько важны апгрейды в жизненном цикле систем для сохранения их конкурентоспособности. Во второй, описаны мои размышления о непосредственной роли разработчика в развитии программных систем.</description>
+    </item>
+    
+  </channel>
+</rss>
