@@ -6,10 +6,21 @@
     <description>Recent content in Test on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Wed, 04 Jul 2018 16:30:57 +0500</lastBuildDate>
+    <lastBuildDate>Thu, 12 Jul 2018 17:35:57 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Нужно ли коммитить vendor</title>
+      <link>https://pavel.oborin.me/posts/vendor/</link>
+      <pubDate>Thu, 12 Jul 2018 17:35:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/vendor/</guid>
+      <description>Мой совет: коммитьте.
+Объясню почему. Вообще эта тема довольно холиварная - одни говорят коммитить, другие говорят ни в коем случае. У тех и у других есть свои весомые аргументы. До недавнего времени я был во второй группе. Но как-то после массовых блокировок Роскомнадзора, заблокировали и репозитории с пакетами, которыми я пользовался. Приложение перестало собираться. Работа встала на несколько часов.
+Мир несовершенен, поэтому коммитьте.</description>
+    </item>
     
     <item>
       <title>Как превратить создание фикстур в интересное занятие</title>
