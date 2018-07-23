@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Troubles on Pavel Oborin</title>
+    <link>https://pavel.oborin.me/tags/troubles/</link>
+    <description>Recent content in Troubles on Pavel Oborin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Sat, 21 Jul 2018 12:30:57 +0500</lastBuildDate>
+    
+	<atom:link href="https://pavel.oborin.me/tags/troubles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Как прокинуть доступ из контейнера к внешним сервисам с самоподписаными сертификатами</title>
+      <link>https://pavel.oborin.me/posts/doker-certificate/</link>
+      <pubDate>Sat, 21 Jul 2018 12:30:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/doker-certificate/</guid>
+      <description>Задача:
+Нужно сделать запрос из апи, развернутой в контейнере, к апи, стоящей за доменом с самоподписанным сертификатом.
+Обычно для того чтобы зайти локально из браузера на такой сайт необходимо принять сертификат. При попытке же вызвать такой сервис из докера будет ошибка: «x509: certificate signed by unknown authority».
+Решение:
+Прокинуть файл сертификата в контейнер и добавить в список доверенных.
+Для нужно добавить в ваш Dockerfile следующие строки:
+COPY tmp/Company-issuer-chain.pem /usr/local/share/ca-certificates/Company-issuer-chain-chain.crt
+RUN update-ca-certificates</description>
+    </item>
+    
+  </channel>
+</rss>
