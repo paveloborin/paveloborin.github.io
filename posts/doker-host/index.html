@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Про путаницу с хостами при использовании контейнеров</title>
+        <style>
+
+    html body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: white;
+        font-size: 14px;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://pavel.oborin.me/css/main.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic" rel="stylesheet">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+        
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116728151-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-116728151-1');
+        </script>
+        
+    </head>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Про путаницу с хостами при использовании контейнеров</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                                <li><a href="https://github.com/paveloborin">GITHUB</a></li>
+                            
+                                <li><a href="https://www.visualcv.com/pavel-oborin">CV</a></li>
+                            
+                                <li><a href="/just-for-fan/">Just For fans</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:me@pavel.oborin.me"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/paveloborin"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/paveloborin"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/7936172/pavel-oborin"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://scholar.google.ru/citations?user=sR8RU10AAAAJ"><i class="fa fa-graduation-cap"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://habrahabr.ru/users/paveloborin/"><i class="fa fa-header"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/posts/doker-host/">Про путаницу с хостами при использовании контейнеров</a></h4>
+    <h5>July 30, 2018</h5>
+      <a href="https://pavel.oborin.me/tags/docker"><kbd class="item-tag">docker</kbd></a>   <a href="https://pavel.oborin.me/tags/kubernetes"><kbd class="item-tag">kubernetes</kbd></a>   <a href="https://pavel.oborin.me/tags/troubles"><kbd class="item-tag">troubles</kbd></a> 
+
+
+</div>
+
+
+    <br> <div class="text-justify"><p><strong>Задача:</strong></p>
+
+<p>Необходимо развернуть через Kubernetes контейнер с новой апи.
+Апи слушает порт 8000, внешний запрос к контейнеру должен быть переадресован на этот порт и вызов отдаваться апи.</p>
+
+<p>До этого задача развернуть новую апи в Kubernetes не вызывала никаких трудностей.
+Однако в новой апи я впервые использовал фреймворк go-swagger, и на спецификациях кубернетиса, работающих для прежних апи, новая апи по каким-то непонятным причинам не взлетела.</p>
+
+<p>При запуске сервиса с апи Kubernetes во время проверки жизнеспособности сервиса не может достучаться до апи по указанному порту.<br />
+По всем признакам порт в контейнере открыт, но в ответ приходит <em>nothing data</em>.
+Все выглядит так, словно внутри контейнера на этом порту нет никакой апи.
+При заходе в контейнер и вызова через curl <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> вызов корректно обрабатывает запущенная в нем апи.</p>
+
+<p>Вывод: по каким-то причинам запрос, не смотря на то что он проходит в контейнер, в саму апи не доходит.</p>
+
+<p><strong>Выявленная ошибка:</strong></p>
+
+<p>Апи слушала 127.0.0.1:8000, а нужно было 0.0.0.0:8000</p>
+
+<p>В контейнере апи должна слушать не localhost (127.0.0.1), а 0.0.0.0 так все внешние запросы к контейнеру передаются именно на него.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved.</p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
