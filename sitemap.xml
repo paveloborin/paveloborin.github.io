@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://pavel.oborin.me/posts/doker-host/</loc>
+    <lastmod>2018-07-30T12:30:57+05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pavel.oborin.me/posts/doker-certificate/</loc>
     <lastmod>2018-07-21T12:30:57+05:00</lastmod>
   </url>
@@ -114,7 +119,7 @@
   
   <url>
     <loc>https://pavel.oborin.me/tags/docker/</loc>
-    <lastmod>2018-07-21T12:30:57+05:00</lastmod>
+    <lastmod>2018-07-30T12:30:57+05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -161,6 +166,12 @@
   </url>
   
   <url>
+    <loc>https://pavel.oborin.me/tags/kubernetes/</loc>
+    <lastmod>2018-07-30T12:30:57+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://pavel.oborin.me/tags/orange-pi/</loc>
     <lastmod>2018-05-01T10:58:57+02:00</lastmod>
     <priority>0</priority>
@@ -168,13 +179,13 @@
   
   <url>
     <loc>https://pavel.oborin.me/</loc>
-    <lastmod>2018-07-21T12:30:57+05:00</lastmod>
+    <lastmod>2018-07-30T12:30:57+05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://pavel.oborin.me/posts/</loc>
-    <lastmod>2018-07-21T12:30:57+05:00</lastmod>
+    <lastmod>2018-07-30T12:30:57+05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -186,7 +197,7 @@
   
   <url>
     <loc>https://pavel.oborin.me/tags/</loc>
-    <lastmod>2018-07-21T12:30:57+05:00</lastmod>
+    <lastmod>2018-07-30T12:30:57+05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -204,7 +215,7 @@
   
   <url>
     <loc>https://pavel.oborin.me/tags/troubles/</loc>
-    <lastmod>2018-07-21T12:30:57+05:00</lastmod>
+    <lastmod>2018-07-30T12:30:57+05:00</lastmod>
     <priority>0</priority>
   </url>
   
