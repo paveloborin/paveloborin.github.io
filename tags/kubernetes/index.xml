@@ -6,10 +6,20 @@
     <description>Recent content in Kubernetes on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 30 Jul 2018 12:30:57 +0500</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 18:30:57 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Про использование секретов в Кубернетис</title>
+      <link>https://pavel.oborin.me/posts/kuber-secrets/</link>
+      <pubDate>Fri, 10 Aug 2018 18:30:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/kuber-secrets/</guid>
+      <description>Часто начинающие разработчики «грешат» тем, что зашивают в код, коммитят в репозиторий или пишут в базу такие данные как: адреса апи, токены, файлы с ключами, пароли. В английской литературе такие данные называются sensitive data. Если от закоммичивания паролей уже все отказались, то остальное еще можно встретить.
+Хардкодить sensitive данные - это плохая практика. Во-первых, это неудобно для эксплуатации систем. Например, когда у вас разное окружение: функциональные тесты, тестовые сервера, боевые сервера, то развязать это все становится сложно.</description>
+    </item>
     
     <item>
       <title>Про путаницу с хостами при использовании контейнеров</title>
