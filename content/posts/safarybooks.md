@@ -1,5 +1,5 @@
 ---
-title: "Про safarybooks"
+title: "O safarybooks и английском"
 date: 2018-08-22T12:30:57+05:00
 draft: false
 tags: ["safarybooks", "самообучение"]
