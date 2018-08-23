@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Kubernetes</title>
+        <title>Некоторые команды Кубернетиса</title>
         <style>
 
     html body {
@@ -61,9 +61,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.42.2" />
         
-        <link href="https://pavel.oborin.me/tags/kubernetes/index.xml" rel="alternate" type="application/rss+xml" title="Pavel Oborin" />
-        <link href="https://pavel.oborin.me/tags/kubernetes/index.xml" rel="feed" type="application/rss+xml" title="Pavel Oborin" />
-        
         
         
         
@@ -86,7 +83,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Kubernetes</a>
+                    <a class="navbar-brand visible-xs" href="#">Некоторые команды Кубернетиса</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -141,39 +138,7 @@
 
 <main>
 
-    <h2>Kubernetes</h2>
-
-     <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/posts/kuber-secrets/">Про использование секретов в Кубернетис</a></h4>
-    <h5>August 10, 2018</h5>
-      <a href="https://pavel.oborin.me/tags/kubernetes"><kbd class="item-tag">kubernetes</kbd></a> 
-
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/posts/doker-host/">Про путаницу с хостами при использовании контейнеров</a></h4>
-    <h5>July 30, 2018</h5>
-      <a href="https://pavel.oborin.me/tags/docker"><kbd class="item-tag">docker</kbd></a>   <a href="https://pavel.oborin.me/tags/kubernetes"><kbd class="item-tag">kubernetes</kbd></a>   <a href="https://pavel.oborin.me/tags/troubles"><kbd class="item-tag">troubles</kbd></a> 
-
-
-</div>
-  <div class="item">
+    <div class="item">
 
     
     
@@ -188,11 +153,123 @@
 
 
 </div>
- 
+
+
+    <br> <div class="text-justify"><p>У меня давно лежит блокнот с наиболее часто используемыми командами Кубернетиса.
+Блокнот пора выбросить, а данные &ldquo;оцифровать&rdquo;.
+Сперва хотел сделать из своих заметок некий справочник, но команды такие очевидные, что на мой взгляд не требуют дополнительных пояснений.</p>
+
+<ul>
+<li><p>kubectl version</p></li>
+
+<li><p>kubectl help</p></li>
+
+<li><p>kubectl proxy</p></li>
+</ul>
+
+<p>CONFIG</p>
+
+<p>Установка контекста</p>
+
+<ul>
+<li><p>kubectl config set-context my-context &ndash;namespace=mystuff</p></li>
+
+<li><p>kubectl config use-context my-context</p></li>
+</ul>
+
+<p>LABEL</p>
+
+<ul>
+<li>kubectl label pods bar color=red</li>
+</ul>
+
+<p>DEBUGGING</p>
+
+<ul>
+<li><p>kubectl logs <pod-name></p></li>
+
+<li><p>kubectl exec -it <pod-name> &ndash;bash</p></li>
+
+<li><p>kubectl cp <pod-name>:/path/to/remote/file /path/to/local/file</p></li>
+</ul>
+
+<p>DELETE</p>
+
+<ul>
+<li><p>kubectl delete <resource-name> <obj-name></p></li>
+
+<li><p>kubectl delete -f obj.yaml</p></li>
+</ul>
+
+<p>EDIT</p>
+
+<ul>
+<li><p>kubectl edit <resource-name> <obj-name></p></li>
+
+<li><p>kubectl edit deployment/alpaca-prod</p></li>
+
+<li><p>kubectl edit service alpaca-prod</p></li>
+</ul>
+
+<p>DESCRIBE</p>
+
+<ul>
+<li><p>kubectl describe service alpaca-prod</p></li>
+
+<li><p>kubectl describe nodes node-1</p></li>
+</ul>
+
+<p>GET</p>
+
+<ul>
+<li><p>kubectl get pods -o wide &ndash;show-labels</p></li>
+
+<li><p>kubectl get deployments &ndash;namespace=kube-system kybe-dns</p></li>
+
+<li><p>kubectl get services &ndash;namespace=kube-system kybe-dns</p></li>
+
+<li><p>kubectl get componentstatuses</p></li>
+
+<li><p>kubectl get nodes</p></li>
+
+<li><p>kubectl get services -o wide</p></li>
+
+<li><p>kubectl get pods -l app=redis -o jsonpath=&lsquo;{.items[0].metadata.name}&rsquo;</p></li>
+
+<li><p>kubectl get pods my-pod -o jsonpath &ndash;template={.status.podIP}</p></li>
+
+<li><p>kubectl get secrets</p></li>
+
+<li><p>kubectl get configmaps</p></li>
+
+<li><p>kubectl get deployments</p></li>
+
+<li><p>kubectl get replicasets -o wide</p></li>
+</ul>
+
+<p>APPLY</p>
+
+<ul>
+<li><p>kubectl apply -f obj.yaml</p></li>
+
+<li><p>kubectl apply -f nginx-deployment.yaml</p></li>
+</ul>
+
+<p>ROLLOUT</p>
+
+<ul>
+<li>kubectl rollout history deployment nginx</li>
+</ul>
+</div>
+
+    
+    
+
+    
+
+    
 
 </main>
-
-
 
         <footer>
 

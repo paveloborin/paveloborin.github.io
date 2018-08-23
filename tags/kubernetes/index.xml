@@ -32,5 +32,23 @@
 До этого аналогичные задачи не вызывали особых трудностей. Однако здесь я впервые использовал новый для себя фреймворк go-swagger, и на спецификациях Kubernetes, работающих для прежних апи, новая апи по каким-то непонятным причинам не взлетела. При запуске пода Kubernetes во время проверки сервиса не мог достучаться до апи по указанному порту и завершал его работу.</description>
     </item>
     
+    <item>
+      <title>Некоторые команды Кубернетиса</title>
+      <link>https://pavel.oborin.me/posts/kuber-some-commands/</link>
+      <pubDate>Mon, 23 Jul 2018 12:30:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/kuber-some-commands/</guid>
+      <description>У меня давно лежит блокнот с наиболее часто используемыми командами Кубернетиса. Блокнот пора выбросить, а данные &amp;ldquo;оцифровать&amp;rdquo;. Сперва хотел сделать из своих заметок некий справочник, но команды такие очевидные, что на мой взгляд не требуют дополнительных пояснений.
+ kubectl version
+ kubectl help
+ kubectl proxy
+  CONFIG
+Установка контекста
+ kubectl config set-context my-context &amp;ndash;namespace=mystuff
+ kubectl config use-context my-context
+  LABEL
+ kubectl label pods bar color=red  DEBUGGING</description>
+    </item>
+    
   </channel>
 </rss>

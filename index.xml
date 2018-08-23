@@ -51,6 +51,24 @@
     </item>
     
     <item>
+      <title>Некоторые команды Кубернетиса</title>
+      <link>https://pavel.oborin.me/posts/kuber-some-commands/</link>
+      <pubDate>Mon, 23 Jul 2018 12:30:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/kuber-some-commands/</guid>
+      <description>У меня давно лежит блокнот с наиболее часто используемыми командами Кубернетиса. Блокнот пора выбросить, а данные &amp;ldquo;оцифровать&amp;rdquo;. Сперва хотел сделать из своих заметок некий справочник, но команды такие очевидные, что на мой взгляд не требуют дополнительных пояснений.
+ kubectl version
+ kubectl help
+ kubectl proxy
+  CONFIG
+Установка контекста
+ kubectl config set-context my-context &amp;ndash;namespace=mystuff
+ kubectl config use-context my-context
+  LABEL
+ kubectl label pods bar color=red  DEBUGGING</description>
+    </item>
+    
+    <item>
       <title>Как прокинуть доступ из контейнера к внешним сервисам с самоподписаными сертификатами</title>
       <link>https://pavel.oborin.me/posts/doker-certificate/</link>
       <pubDate>Sat, 21 Jul 2018 12:30:57 +0500</pubDate>
