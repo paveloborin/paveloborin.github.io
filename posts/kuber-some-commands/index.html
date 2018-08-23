@@ -186,17 +186,17 @@
 <p>DEBUGGING</p>
 
 <ul>
-<li><p>kubectl logs <pod-name></p></li>
+<li><p>kubectl logs pod-name</p></li>
 
-<li><p>kubectl exec -it <pod-name> &ndash;bash</p></li>
+<li><p>kubectl exec -it pod-name &ndash;bash</p></li>
 
-<li><p>kubectl cp <pod-name>:/path/to/remote/file /path/to/local/file</p></li>
+<li><p>kubectl cp pod-name:/path/to/remote/file /path/to/local/file</p></li>
 </ul>
 
 <p>DELETE</p>
 
 <ul>
-<li><p>kubectl delete <resource-name> <obj-name></p></li>
+<li><p>kubectl delete resource-name obj-name</p></li>
 
 <li><p>kubectl delete -f obj.yaml</p></li>
 </ul>
@@ -204,7 +204,7 @@
 <p>EDIT</p>
 
 <ul>
-<li><p>kubectl edit <resource-name> <obj-name></p></li>
+<li><p>kubectl edit resource-name obj-name</p></li>
 
 <li><p>kubectl edit deployment/alpaca-prod</p></li>
 

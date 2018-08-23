@@ -31,22 +31,22 @@ LABEL
 
 DEBUGGING
 
-- kubectl logs <pod-name>
+- kubectl logs pod-name
 
-- kubectl exec -it <pod-name> --bash
+- kubectl exec -it pod-name --bash
 
-- kubectl cp <pod-name>:/path/to/remote/file /path/to/local/file
+- kubectl cp pod-name:/path/to/remote/file /path/to/local/file
 
 
 DELETE
 
-- kubectl delete <resource-name> <obj-name>
+- kubectl delete resource-name obj-name
 
 - kubectl delete -f obj.yaml 
 
 EDIT
 
-- kubectl edit <resource-name> <obj-name>
+- kubectl edit resource-name obj-name
 
 - kubectl edit deployment/alpaca-prod
 
