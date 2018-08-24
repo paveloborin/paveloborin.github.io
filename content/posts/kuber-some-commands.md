@@ -10,11 +10,12 @@ tags: ["kubernetes"]
 
 INSTALL MAC
 
-curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl
+1. ``` curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl ```
 
-chmod +x ./kubectl
+2. ``` chmod +x ./kubectl```
 
-sudo mv ./kubectl /usr/local/bin/kubectl
+3. ```sudo mv ./kubectl /usr/local/bin/kubectl```
+
 
 
 VERSION, HELP
