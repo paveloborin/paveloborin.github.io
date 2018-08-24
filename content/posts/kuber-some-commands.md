@@ -8,10 +8,23 @@ tags: ["kubernetes"]
 Блокнот давно пора выбросить, а данные "оцифровать" - кому-нибудь еще могут пригодиться.
 Сперва хотел сделать из заметок некий справочник, но команды Кубренетиса такие очевидные, что на мой взгляд дополнительных пояснений не требуют. 
 
+INSTALL
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl
+
+chmod +x ./kubectl
+
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+
+VERSION, HELP
 
 - kubectl version 
 
 - kubectl help
+
+
+PROXY
 
 - kubectl proxy
 
@@ -95,4 +108,9 @@ APPLY
 ROLLOUT
 
 - kubectl rollout history deployment nginx
+
+
+AUTOSCALE
+
+kubectl autoscale deployment --min=1 --max=5 --cpu-percent=40 resource_name
 

@@ -159,12 +159,26 @@
 Блокнот давно пора выбросить, а данные &ldquo;оцифровать&rdquo; - кому-нибудь еще могут пригодиться.
 Сперва хотел сделать из заметок некий справочник, но команды Кубренетиса такие очевидные, что на мой взгляд дополнительных пояснений не требуют.</p>
 
+<p>INSTALL</p>
+
+<p>curl -LO <a href="https://storage.googleapis.com/kubernetes-release/release/`curl">https://storage.googleapis.com/kubernetes-release/release/`curl</a> -s <a href="https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl">https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl</a></p>
+
+<p>chmod +x ./kubectl</p>
+
+<p>sudo mv ./kubectl /usr/local/bin/kubectl</p>
+
+<p>VERSION, HELP</p>
+
 <ul>
 <li><p>kubectl version</p></li>
 
 <li><p>kubectl help</p></li>
+</ul>
 
-<li><p>kubectl proxy</p></li>
+<p>PROXY</p>
+
+<ul>
+<li>kubectl proxy</li>
 </ul>
 
 <p>CONFIG</p>
@@ -260,6 +274,10 @@
 <ul>
 <li>kubectl rollout history deployment nginx</li>
 </ul>
+
+<p>AUTOSCALE</p>
+
+<p>kubectl autoscale deployment &ndash;min=1 &ndash;max=5 &ndash;cpu-percent=40 resource_name</p>
 </div>
 
     
