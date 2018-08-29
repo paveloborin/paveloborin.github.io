@@ -63,21 +63,11 @@ googleAnalytics = "UA-116728151-1"
     weight = 2
 
 [[menu.icon]]
-    url = "https://www.linkedin.com/in/paveloborin"
+    url = "https://www.linkedin.com/in/pavel-oborin/"
     name = "linkedin"
     weight = 3
-
-[[menu.icon]]
-    url = "https://stackoverflow.com/users/7936172/pavel-oborin"
-    name = "stack-overflow"
-    weight = 4
 
 [[menu.icon]]
     url = "https://scholar.google.ru/citations?user=sR8RU10AAAAJ"
     name = "graduation-cap"
     weight = 5
-
-[[menu.icon]]
-    url = "https://habrahabr.ru/users/paveloborin/"
-    name = "header"
-    weight = 6
