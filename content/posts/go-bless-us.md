@@ -2,7 +2,7 @@
 title: "Да поможет нам Go. Базовые ценности и основы философии языка Go по мотивам курса Билла Кеннеди"
 date: 2018-05-12T10:58:57+02:00
 draft: false
-tags: ["go", "William Kennedy","о разработке"]
+tags: ["go", "William Kennedy","о разработке","главное"]
 description: "Заметка строится вокруг первой лекции курса Билла Кеннеди (William Kennedy) “Ultimate Go Programming” доступного на safaribook (https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/). Меня настолько воодушевил данный курс, что показалось интересным сделать некую выжимку своего конспекта по этим лекциям."
 ---
 
