@@ -6,10 +6,21 @@
     <description>Recent content in Go on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 04 Jun 2018 02:43:57 +0500</lastBuildDate>
+    <lastBuildDate>Wed, 05 Sep 2018 20:00:57 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Бенчмарк, как основной критерий принятия решения о изменении существующего кода</title>
+      <link>https://pavel.oborin.me/posts/bench/</link>
+      <pubDate>Wed, 05 Sep 2018 20:00:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/bench/</guid>
+      <description>Билл Кеннеди в одной из лекций своего курса &amp;ldquo;Ultimate Go programming&amp;rdquo; на safarybook (https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/) сказал следующее:
+&amp;ldquo;Многие разработчики стремятся оптимизировать свой код. Они берут строчку и переписывают ее, говоря, что так станет быстрее. Им нужно остановиться. Говорить, что тот или иной код быстрее можно только после того, как вы его отпрофилировали или сделали бенчмарки. Если вы гадаете, то это не является правильным подходом к написанию кода.&amp;ldquo;
+Мне захотелось написать заметку, в которой бы на практическом примере показывалось, как это может работать.</description>
+    </item>
     
     <item>
       <title>Инструменты для форматирования и анализа кода в Go</title>

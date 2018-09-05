@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Бенчмарк, как основной критерий принятия решения о изменении существующего кода</title>
+        <style>
+
+    html body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: white;
+        font-size: 14px;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://pavel.oborin.me/css/main.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic" rel="stylesheet">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+        
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116728151-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-116728151-1');
+        </script>
+        
+    </head>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Бенчмарк, как основной критерий принятия решения о изменении существующего кода</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                                <li><a href="https://github.com/paveloborin">GITHUB</a></li>
+                            
+                                <li><a href="https://www.visualcv.com/pavel-oborin">CV</a></li>
+                            
+                                <li><a href="/just-for-fan/">Just For fans</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:me@pavel.oborin.me"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/paveloborin"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/pavel-oborin/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://scholar.google.ru/citations?user=sR8RU10AAAAJ"><i class="fa fa-graduation-cap"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/posts/bench/">Бенчмарк, как основной критерий принятия решения о изменении существующего кода</a></h4>
+    <h5>September 5, 2018</h5>
+      <a href="https://pavel.oborin.me/tags/go"><kbd class="item-tag">go</kbd></a> 
+
+
+</div>
+
+
+    <br> <div class="text-justify"><p>Билл Кеннеди в одной из лекций своего курса &ldquo;Ultimate Go programming&rdquo; на safarybook (<a href="https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/">https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/</a>)  сказал следующее:</p>
+
+<p><strong>&ldquo;</strong><strong><em>Многие разработчики стремятся оптимизировать свой код. Они берут строчку и переписывают ее, говоря, что так станет быстрее. Им нужно остановиться. Говорить, что тот или иной код быстрее можно только после того, как вы его отпрофилировали или сделали бенчмарки. Если вы гадаете, то это не является правильным подходом к написанию кода.</em></strong><strong>&ldquo;</strong></p>
+
+<p>Мне захотелось написать заметку, в которой бы на практическом примере показывалось, как это может работать. Давайте попробует доказать, следующее утверждение:</p>
+
+<p><em>Для разработчиков бенчмарки должны стать главной инстанцией при совершении суждения о том какой из алгоритмов: существующий или предложенный ему на замену является эффективнее. Информация из интернета, суждения коллег и других людей, какой бы авторитет они для вас не представляли, могут служить вспомогательными элементами на пути к поиску правильного решения, но роль главного судьи, решающего быть или нет новому алгоритму должна оставаться за бенчмарками.</em></p>
+
+<p>На днях я переписывал один пакет на Go и мое внимание привлек следующий код, который как раз можно было бы использовать в качестве такого практического примера:</p>
+
+<p><strong>_builds := _</strong><strong><em>store</em></strong><strong><em>.</em></strong><strong><em>Instance</em></strong><strong><em>.</em></strong><strong><em>GetBuildsFromNumberToNumber</em></strong><strong><em>(</em></strong><strong><em>stageBuild</em></strong><strong><em>.</em></strong><strong><em>BuildNumber</em></strong><strong>_, _</strong><strong><em>lastBuild</em></strong><strong><em>.</em></strong><strong><em>BuildNumber</em></strong><strong><em>)</em></strong></p>
+
+<p><strong>_tempList _</strong><strong>_:= _</strong><strong><em>model</em></strong><strong><em>.</em></strong><strong><em>GameBuildsList</em></strong><strong><em>{}</em></strong></p>
+
+<p><strong>_for _</strong><strong>_i _</strong><strong>_:= _</strong><strong><em>len</em></strong><strong><em>(</em></strong><strong><em>builds</em></strong><strong>_) - _</strong><strong><em>1</em></strong><strong>_; _</strong><strong>_i _</strong><strong>_&gt;= _</strong><strong><em>0</em></strong><strong>_; _</strong><strong><em>i</em></strong><strong><em>&ndash; {</em></strong></p>
+
+<p><strong>_  _</strong><strong>_b _</strong><strong>_:= _</strong><strong><em>builds</em></strong><strong><em>[</em></strong><strong><em>i</em></strong><strong><em>]</em></strong></p>
+
+<p><strong>_  _</strong><strong><em>b</em></strong><strong><em>.</em></strong><strong>_PatchURLs _</strong><strong>_= _</strong><strong><em>b</em></strong><strong><em>.</em></strong><strong><em>ReversePatchURLs</em></strong></p>
+
+<p><strong>_  _</strong><strong><em>b</em></strong><strong><em>.</em></strong><strong>_ExtractedSize _</strong><strong>_= _</strong><strong><em>b</em></strong><strong><em>.</em></strong><strong><em>RPatchExtractedSize</em></strong></p>
+
+<p><strong>_  _</strong><strong>_tempList _</strong><strong>_= _</strong><strong><em>append</em></strong><strong><em>(</em></strong><strong><em>tempList</em></strong><strong>_, _</strong><strong><em>b</em></strong><strong><em>)</em></strong></p>
+
+<p><strong><em>}</em></strong></p>
+
+<p>Этот код во всех элементах слайса <strong><em>builds,</em></strong>* возвращаемого из базы данных,* заменяет PatchURLs на ReversePatchURLs, ExtractedSize на RPatchExtractedSize и делает реверс - меняет порядок элементов, так чтобы последний элемент стал первым, а первый последним.</p>
+
+<p>На мой взгляд, исходный код немного сложен для восприятия и может быть упрощен. Этот код выполняет простой алгоритм состоящий из двух логических частей: изменение элементов слайса и сортировка, но чтобы читателю вычленить эти две части понадобится время.</p>
+
+<p>Не смотря на то, что обе части важны, в коде реверс не так акцентируется, как хотелось бы. Он разбросан по трем оторванным друг от друга строкам: инициализация нового слайса, итерация существующего слайса в обратном порядке, добавление нового элемента в новый слайс. Тем не менее, нельзя игнорировать и несомненные преимущества данного кода: код рабочий и протестирован, и если говорить объективно, то он вполне адекватный.</p>
+
+<p>Субъективное восприятие кода отдельным разработчиком не может служить оправданием для его переписывания. К сожалению или к счастью, мы не переписываем код только потому что он нам просто не нравится (или, как чаще бывает, просто потому что он не наш, см. &ldquo;Фатальный недостаток&rdquo;).  Но что, если нам удастся не только улучшить восприятие данного кода, но и существенно ускорить его? Это же совсем другое дело. Можно предложить несколько альтернативных алгоритмов выполняющих заложенный в коде функционал.</p>
+
+<p>Первый вариант: перебор всех элементов в цикле range; для реверса первоначального слайса в каждой итерации добавляем элемент в начало итогового массива. Так мы избавимся от: громоздкого <em>for</em>, переменной  <em>i</em>, использования функции <em>len</em>, трудно воспринимаемого перебора элементов с конца, а также сократим количество кода на две строки с 7 строк до  5, а чем меньше кода, тем меньше вероятность допустить в нем ошибку.</p>
+
+<p><strong>_var _</strong><strong>_tempList _</strong><strong><em>[]*</em></strong><strong><em>store</em></strong><strong><em>.</em></strong><strong><em>GameBuild</em></strong></p>
+
+<p><strong>_for _</strong><strong>___</strong><strong>_, _</strong><strong>_build _</strong><strong>_:= _</strong><strong>_range _</strong><strong>_builds _</strong><strong><em>{</em></strong></p>
+
+<p><strong>_  _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>PatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong>_ExtractedSize _</strong><strong>_= _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>ReversePatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>RPatchExtractedSize</em></strong></p>
+
+<p><strong>_  _</strong><strong>_tempList _</strong><strong>_= _</strong><strong><em>append</em></strong><strong><em>([]*</em></strong><strong><em>store</em></strong><strong><em>.</em></strong><strong><em>GameBuild</em></strong><strong><em>{</em></strong><strong><em>build</em></strong><strong><em>}</em></strong><strong>_, _</strong><strong><em>tempList</em></strong><strong><em>&hellip;)</em></strong></p>
+
+<p><strong><em>}</em></strong></p>
+
+<p>Убрав перебор слайса с конца,  мы четко разграничили операции изменения элементов (3 строка)  и реверса исходного массива (4 строка).</p>
+
+<p>Основной замысел второго варианта состоит в еще большем разнесении изменения элементов и сортировки. Сперва перебираем элементы и меняем их, а потом сортируем слайс отдельной операцией. Данный метод потребует дополнительной реализации интерфейса сортировки для структуры-элемента слайса,  но повысит читабельность и позволит полностью отделить и изолировать реверс от изменения элементов, а слово <strong>_Reverse _</strong>однозначно укажет читателю на желаемый результат.</p>
+
+<p><strong>_var _</strong><strong>_tempList _</strong><strong><em>[]*</em></strong><strong><em>store</em></strong><strong><em>.</em></strong><strong><em>GameBuild</em></strong></p>
+
+<p><strong>_for _</strong><strong>___</strong><strong>_, _</strong><strong>_build _</strong><strong>_:= _</strong><strong>_range _</strong><strong>_builds _</strong><strong><em>{</em></strong></p>
+
+<p><strong>_  _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>PatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong>_ExtractedSize _</strong><strong>_= _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>ReversePatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>RPatchExtractedSize</em></strong></p>
+
+<p><strong>_ _</strong><strong><em>}</em></strong></p>
+
+<p><strong><em>sort.</em></strong><strong><em>Sort</em></strong><strong><em>(sort.</em></strong><strong><em>Reverse</em></strong><strong><em>(sort.</em></strong><strong><em>IntSlice</em></strong><strong><em>(keys)))</em></strong></p>
+
+<p>Третий вариант - является практически повторением второго, но для сортировки используется <strong><em>sort</em></strong><strong><em>.</em></strong><strong><em>Slice</em></strong>, что добавляет лишнюю строчку, но избавляет нас от необходимости дополнительно реализовывать интерфейс сортировки.</p>
+
+<p><strong>_     _</strong><strong>_for _</strong><strong>___</strong><strong>_, _</strong><strong>_build _</strong><strong>_:= _</strong><strong>_range _</strong><strong>_builds _</strong><strong><em>{</em></strong></p>
+
+<p><strong>_         _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>PatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong>_ExtractedSize _</strong><strong>_= _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>ReversePatchUrls</em></strong><strong>_,          _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>RPatchExtractedSize</em></strong></p>
+
+<p><strong>_     _</strong><strong><em>}</em></strong></p>
+
+<p><strong>_     _</strong><strong><em>sort</em></strong><strong><em>.</em></strong><strong><em>Slice</em></strong><strong><em>(</em></strong><strong><em>builds</em></strong><strong><em>, func</em></strong><strong><em>(</em></strong><strong>_i _</strong><strong><em>int</em></strong><strong>_, _</strong><strong>_j _</strong><strong><em>int</em></strong><strong>_) _</strong><strong>_bool _</strong><strong><em>{</em></strong></p>
+
+<p><strong>_        _</strong><strong>_return _</strong><strong><em>builds</em></strong><strong><em>[</em></strong><strong><em>i</em></strong><strong><em>].</em></strong><strong>_Id _</strong><strong>_&gt; _</strong><strong><em>builds</em></strong><strong><em>[</em></strong><strong><em>j</em></strong><strong><em>].</em></strong><strong><em>Id</em></strong></p>
+
+<p><strong>_     _</strong><strong><em>})</em></strong></p>
+
+<p>На первый взгляд, по внутренней сложности, количеству итераций, используемым функциям изначальный код и первый алгоритм близки; второй  и третий варианты могут быть чуть сложнее, но за счет использования встроенных функций однозначно сказать какой из четырех вариантов будет самым оптимальным все же нельзя.</p>
+
+<p>Итак, после слов Билла, мы запретили себе принимать решения, основываясь на голословных предположениях не подкрепленных доказательствами, но очевидно, что здесь наибольший интерес представляет то, как поведет себя функция <strong><em>append</em></strong> при добавлении элемента в конец и в начало слайса. Ведь на самом деле эта функция не так проста, как кажется.</p>
+
+<p>Append работает следующим образом (blog.golang.org/slices): она либо добавляет к существующему в памяти слайсу новый элемент, если его capacity больше итоговой длины, либо  резервирует в памяти место под новый слайс, копируя в него данные из первого аргумента и добавляя данные второго, возвращая в качестве результата уже новый слайс.</p>
+
+<p>Самый интересный нюанс в работе этой функции состоит в алгоритме используемом для резервирования памяти под новый массив. Так как самой дорогой операцией являться выделение нового участка памяти, то чтобы сделать операцию append дешевле, разработчики Go пошли на небольшую хитрость. По началу при каждом резервировании памяти, чтобы не резервировать память заново при каждом добавлении элемента, объем резервируемого участка выделяется с некоторым запасом - в два раза больше первоначального, но после определенного количества элементов объем вновь резервируемого участка памяти становится больше не в два раза, а на 25%.</p>
+
+<p>С учетом нового понимания работы <strong><em>append</em></strong> ответ на вопрос: &ldquo;<em>Что будет быстрее: добавлять один элемент в конец существующего слайса, или добавлять к слайсу из одного элемента существующий слайс?</em>&rdquo; уже более прозрачен. Можно предположить, что во втором случае по сравнению с первым будет больше аллокаций памяти, что может прямым образом отразиться на скорости работы.</p>
+
+<p>Так плавно мы подошли к бенчмаркам. С помощью бенчмарков можно оценить нагрузку алгоритма на самые критичные ресурсы такие как время выполнения и оперативная память.</p>
+
+<p>Давайте приступим и напишем бенчмарк для оценки всех четырех наших алгоритмов, и также оценим какой прирост может нам дать отказ от сортировки (чтобы понимать какая часть всего времени тратится именно на сортировку).</p>
+
+<p>Код бенчмарка:</p>
+
+<p>**package **services</p>
+
+<p>**import **(</p>
+
+<p><strong>&ldquo;testing&rdquo;</strong></p>
+
+<p>**  &ldquo;sort&rdquo;**</p>
+
+<p>)</p>
+
+<p>**type **GameBuild **struct **{</p>
+
+<p>Id                  int</p>
+
+<p>ExtractedSize       int64</p>
+
+<p>PatchUrls           string</p>
+
+<p>ReversePatchUrls    string</p>
+
+<p>RPatchExtractedSize int64</p>
+
+<p>}</p>
+
+<p>**type **GameBuilds []*GameBuild</p>
+
+<p>**func **(a GameBuilds) Len() int           { **return **len(a) }</p>
+
+<p>**func **(a GameBuilds) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }</p>
+
+<p>**func **(a GameBuilds) Less(i, j int) bool { **return **a[i].Id &lt; a[j].Id }</p>
+
+<p>**func **prepare() GameBuilds {</p>
+
+<p>**var **builds GameBuilds</p>
+
+<p>**for **i := 0; i &lt; 100000; i++ {</p>
+
+<pre><code> builds = append(builds, &amp;GameBuild{Id: i})
+</code></pre>
+
+<p>}</p>
+
+<p>**return **builds</p>
+
+<p>}</p>
+
+<p>**func **BenchmarkF1(b *testing.B) {</p>
+
+<p>data := prepare()</p>
+
+<p>builds := make(GameBuilds, len(data))</p>
+
+<p>b.ResetTimer()</p>
+
+<p>**for **i := 0; i &lt; b.N; i++ {</p>
+
+<pre><code> **var **tempList GameBuilds
+
+ copy(builds, data)
+
+ **for **i := len(builds) - 1; i &gt;= 0; i-- {
+
+    b := builds[i]
+
+    b.PatchUrls, b.ExtractedSize = b.ReversePatchUrls, b.RPatchExtractedSize
+
+    tempList = append(tempList, b)
+
+ }
+</code></pre>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>**func **BenchmarkF2(b *testing.B) {</p>
+
+<p>data := prepare()</p>
+
+<p>builds := make(GameBuilds, len(data))</p>
+
+<p>b.ResetTimer()</p>
+
+<p>**for **i := 0; i &lt; b.N; i++ {</p>
+
+<pre><code> **var **tempList GameBuilds
+
+ copy(builds, data)
+
+ **for **_, build := **range **builds {
+
+    build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+
+    tempList = append([]*GameBuild{build}, tempList...)
+
+ }
+</code></pre>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>**func **BenchmarkF3(b *testing.B) {</p>
+
+<p>data := prepare()</p>
+
+<p>builds := make(GameBuilds, len(data))</p>
+
+<p>b.ResetTimer()</p>
+
+<p>**for **i := 0; i &lt; b.N; i++ {</p>
+
+<pre><code> copy(builds, data)
+
+ **for **_, build := **range **builds {
+
+    build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+
+ }
+
+ sort.Sort(sort.Reverse(builds))
+</code></pre>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>**func **BenchmarkF4(b *testing.B) {</p>
+
+<p>data := prepare()</p>
+
+<p>builds := make(GameBuilds, len(data))</p>
+
+<p>b.ResetTimer()</p>
+
+<p>**for **i := 0; i &lt; b.N; i++ {</p>
+
+<pre><code> copy(builds, data)
+
+ **for **_, build := **range **builds {
+
+    build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+
+ }
+
+ sort.Slice(builds, **func**(i int, j int) bool {
+
+    **return **builds[i].Id &gt; builds[j].Id
+
+ })
+</code></pre>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>**func **BenchmarkF5(b *testing.B) {</p>
+
+<p>data := prepare()</p>
+
+<p>builds := make(GameBuilds, len(data))</p>
+
+<p>b.ResetTimer()</p>
+
+<p>**for **i := 0; i &lt; b.N; i++ {</p>
+
+<pre><code> copy(builds, data)
+
+ **for **_, build := **range **builds {
+
+    build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+
+ }
+</code></pre>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>Запустим бенчмарк командой:</p>
+
+<p><strong><em>go test -bench=. -benchmem</em></strong></p>
+
+<p>Результаты вычислений для слайсов размеров: 10, 100, 1000, 10000, 100000 приведены на графике ниже. По оси абсцисс отложен размер итерируемого слайса, по оси ординат время вычисления в секундах.</p>
+
+<p><span style="display:block;text-align:center">
+<img src="/static/bench_1.png" width="450px">
+<br>Рис. 1 Время выполнения операции
+</span></p>
+
+<p><span style="display:block;text-align:center">
+<img src="/static/bench_2.png" width="450px">
+<br>Рис. 2  Количество аллокаций памяти на одну операцию
+</span></p>
+
+<p>Как видно из графика, можно увеличивать массив, но конечный результат уже в принципе различим на слайсе из 10 элементов. Исходя из этого результата,  ни один из альтернативных алгоритмов: F2, F3, F4 не смог превзойти по скорости работы изначальный алгоритм (F1). Даже не смотря на то, что у всех кроме первого количество аллокаций памяти незначительно меньше, чем у изначального. Первый алгоритм (F2) с добавлением элемента в начало слайса оказался самым неэффективным - как и предполагалось в нем слишком много аллокаций памяти. настолько, что использовать его в продуктовой разработке категорически нельзя. Алгоритм с использованием встроенной функции сортировки реверсом (F3) существенно медленнее изначального. И только алгоритм с сортировкой  <strong><em>sort.Slice</em></strong> сравним по скорости с изначальным алгоритмом, но при этом тоже слегка уступает ему.</p>
+
+<p>Также можно заметить, что отказ от сортировки (F5) дает существенное ускорение. Поэтому, если очень хочется переписать код, то можно пойти в этом направлении, например, поднимая изначальный слайс builds из базы данных отсортировать его по id не ASC, а DESC средствами базы. Но при этом мы вынуждены выйти за границы рассматриваемого участка кода, что влечет за собой риск привнести множественные изменения.</p>
+
+<p>**Заключение **</p>
+
+<p>Нет большого смысла тратить свое время на рассуждения о том будет тот или иной код быстрее. Пишите бенчмарки. Написать бенчмарк в Go практически ничего не стоит.</p>
+
+<p>Go только на первый взгляд довольно простой язык. Вездесущее правило <sup>80</sup>&frasl;<sub>20</sub>  применимо и здесь. Как  раз эти 20% - это те тонкости внутреннего устройства языка, знание которых отделяют новичка от опытного разработчика.  Практика написания бенчмарков для разрешения своих вопросов - это один их самых дешевых и эффективных способов получить как ответ на вопрос                   так и более глубокое понимание внутреннего устройства и принципов работы языка Go.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved.</p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
