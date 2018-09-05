@@ -161,23 +161,25 @@
 
 <p>На днях я переписывал один пакет на Go и мое внимание привлек следующий код, который как раз можно было бы использовать в качестве такого практического примера:</p>
 
-<p><strong>_builds := _</strong><strong><em>store</em></strong><strong><em>.</em></strong><strong><em>Instance</em></strong><strong><em>.</em></strong><strong><em>GetBuildsFromNumberToNumber</em></strong><strong><em>(</em></strong><strong><em>stageBuild</em></strong><strong><em>.</em></strong><strong><em>BuildNumber</em></strong><strong>_, _</strong><strong><em>lastBuild</em></strong><strong><em>.</em></strong><strong><em>BuildNumber</em></strong><strong><em>)</em></strong></p>
+<p>&rdquo;&rsquo;
+builds := store.Instance.GetBuildsFromNumberToNumber(stageBuild.BuildNumber, lastBuild.BuildNumber)</p>
 
-<p><strong>_tempList _</strong><strong>_:= _</strong><strong><em>model</em></strong><strong><em>.</em></strong><strong><em>GameBuildsList</em></strong><strong><em>{}</em></strong></p>
+<p>tempList := model.GameBuildsList{}</p>
 
-<p><strong>_for _</strong><strong>_i _</strong><strong>_:= _</strong><strong><em>len</em></strong><strong><em>(</em></strong><strong><em>builds</em></strong><strong>_) - _</strong><strong><em>1</em></strong><strong>_; _</strong><strong>_i _</strong><strong>_&gt;= _</strong><strong><em>0</em></strong><strong>_; _</strong><strong><em>i</em></strong><strong><em>&ndash; {</em></strong></p>
+<p>for i := len(builds) - 1; i &gt;= 0; i&ndash; {</p>
 
-<p><strong>_  _</strong><strong>_b _</strong><strong>_:= _</strong><strong><em>builds</em></strong><strong><em>[</em></strong><strong><em>i</em></strong><strong><em>]</em></strong></p>
+<p>b := builds[i]</p>
 
-<p><strong>_  _</strong><strong><em>b</em></strong><strong><em>.</em></strong><strong>_PatchURLs _</strong><strong>_= _</strong><strong><em>b</em></strong><strong><em>.</em></strong><strong><em>ReversePatchURLs</em></strong></p>
+<p>b.PatchURLs = b.ReversePatchURLs</p>
 
-<p><strong>_  _</strong><strong><em>b</em></strong><strong><em>.</em></strong><strong>_ExtractedSize _</strong><strong>_= _</strong><strong><em>b</em></strong><strong><em>.</em></strong><strong><em>RPatchExtractedSize</em></strong></p>
+<p>b.ExtractedSize = b.RPatchExtractedSize</p>
 
-<p><strong>_  _</strong><strong>_tempList _</strong><strong>_= _</strong><strong><em>append</em></strong><strong><em>(</em></strong><strong><em>tempList</em></strong><strong>_, _</strong><strong><em>b</em></strong><strong><em>)</em></strong></p>
+<p>tempList = append(tempList, b)</p>
 
-<p><strong><em>}</em></strong></p>
+<p>}
+&ldquo;&rsquo;</p>
 
-<p>Этот код во всех элементах слайса <strong><em>builds,</em></strong>* возвращаемого из базы данных,* заменяет PatchURLs на ReversePatchURLs, ExtractedSize на RPatchExtractedSize и делает реверс - меняет порядок элементов, так чтобы последний элемент стал первым, а первый последним.</p>
+<p>Этот код во всех элементах слайса <strong><em>builds,</em></strong> возвращаемого из базы данных,* заменяет PatchURLs на ReversePatchURLs, ExtractedSize на RPatchExtractedSize и делает реверс - меняет порядок элементов, так чтобы последний элемент стал первым, а первый последним.</p>
 
 <p>На мой взгляд, исходный код немного сложен для восприятия и может быть упрощен. Этот код выполняет простой алгоритм состоящий из двух логических частей: изменение элементов слайса и сортировка, но чтобы читателю вычленить эти две части понадобится время.</p>
 
@@ -441,7 +443,7 @@
 
 <p>Также можно заметить, что отказ от сортировки (F5) дает существенное ускорение. Поэтому, если очень хочется переписать код, то можно пойти в этом направлении, например, поднимая изначальный слайс builds из базы данных отсортировать его по id не ASC, а DESC средствами базы. Но при этом мы вынуждены выйти за границы рассматриваемого участка кода, что влечет за собой риск привнести множественные изменения.</p>
 
-<p>**Заключение **</p>
+<p><strong>Заключение</strong></p>
 
 <p>Нет большого смысла тратить свое время на рассуждения о том будет тот или иной код быстрее. Пишите бенчмарки. Написать бенчмарк в Go практически ничего не стоит.</p>
 
