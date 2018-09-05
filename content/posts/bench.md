@@ -14,23 +14,19 @@ tags: ["go"]
 
 На днях я переписывал один пакет на Go и мое внимание привлек следующий код, который как раз можно было бы использовать в качестве такого практического примера:
 
-'''
+```
 builds := store.Instance.GetBuildsFromNumberToNumber(stageBuild.BuildNumber, lastBuild.BuildNumber)
 
 tempList := model.GameBuildsList{}
 
 for i := len(builds) - 1; i >= 0; i-- {
-
   b := builds[i]
-  
   b.PatchURLs = b.ReversePatchURLs
-  
   b.ExtractedSize = b.RPatchExtractedSize
-  
   tempList = append(tempList, b)
   
 }
-'''
+```
 
 Этот код во всех элементах слайса **_builds,_** возвращаемого из базы данных,* заменяет PatchURLs на ReversePatchURLs, ExtractedSize на RPatchExtractedSize и делает реверс - меняет порядок элементов, так чтобы последний элемент стал первым, а первый последним.
 
@@ -41,44 +37,40 @@ for i := len(builds) - 1; i >= 0; i-- {
 Субъективное восприятие кода отдельным разработчиком не может служить оправданием для его переписывания. К сожалению или к счастью, мы не переписываем код только потому что он нам просто не нравится (или, как чаще бывает, просто потому что он не наш, см. "Фатальный недостаток").  Но что, если нам удастся не только улучшить восприятие данного кода, но и существенно ускорить его? Это же совсем другое дело. Можно предложить несколько альтернативных алгоритмов выполняющих заложенный в коде функционал. 
 
 Первый вариант: перебор всех элементов в цикле range; для реверса первоначального слайса в каждой итерации добавляем элемент в начало итогового массива. Так мы избавимся от: громоздкого *for*, переменной  *i*, использования функции *len*, трудно воспринимаемого перебора элементов с конца, а также сократим количество кода на две строки с 7 строк до  5, а чем меньше кода, тем меньше вероятность допустить в нем ошибку.
+```
+var tempList []*store.GameBuild
 
-**_var _****_tempList _****_[]*_****_store_****_._****_GameBuild_**
-
-**_for _****___****_, _****_build _****_:= _****_range _****_builds _****_{_**
-
-**_  _****_build_****_._****_PatchUrls_****_, _****_build_****_._****_ExtractedSize _****_= _****_build_****_._****_ReversePatchUrls_****_, _****_build_****_._****_RPatchExtractedSize_**
-
-**_  _****_tempList _****_= _****_append_****_([]*_****_store_****_._****_GameBuild_****_{_****_build_****_}_****_, _****_tempList_****_...)_**
-
-**_}_**
+for _, build := range builds {
+  build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+  tempList = append([]*store.GameBuild{build}, tempList...)
+  
+}
+```
 
 Убрав перебор слайса с конца,  мы четко разграничили операции изменения элементов (3 строка)  и реверса исходного массива (4 строка).
 
 Основной замысел второго варианта состоит в еще большем разнесении изменения элементов и сортировки. Сперва перебираем элементы и меняем их, а потом сортируем слайс отдельной операцией. Данный метод потребует дополнительной реализации интерфейса сортировки для структуры-элемента слайса,  но повысит читабельность и позволит полностью отделить и изолировать реверс от изменения элементов, а слово **_Reverse _**однозначно укажет читателю на желаемый результат.
+```
+var tempList []*store.GameBuild
 
-**_var _****_tempList _****_[]*_****_store_****_._****_GameBuild_**
+for _, build := range builds {
+  build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+ }
 
-**_for _****___****_, _****_build _****_:= _****_range _****_builds _****_{_**
-
-**_  _****_build_****_._****_PatchUrls_****_, _****_build_****_._****_ExtractedSize _****_= _****_build_****_._****_ReversePatchUrls_****_, _****_build_****_._****_RPatchExtractedSize_**
-
-**_ _****_}_**
-
-**_sort._****_Sort_****_(sort._****_Reverse_****_(sort._****_IntSlice_****_(keys)))_**
+sort.Sort(sort.Reverse(sort.IntSlice(keys)))
+```
 
 Третий вариант - является практически повторением второго, но для сортировки используется **_sort_****_._****_Slice_**, что добавляет лишнюю строчку, но избавляет нас от необходимости дополнительно реализовывать интерфейс сортировки. 
 
-**_     _****_for _****___****_, _****_build _****_:= _****_range _****_builds _****_{_**
+```
+     for _, build := range builds {
+  		build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+     }
 
-**_  		_****_build_****_._****_PatchUrls_****_, _****_build_****_._****_ExtractedSize _****_= _****_build_****_._****_ReversePatchUrls_****_,          _****_build_****_._****_RPatchExtractedSize_**
-
-**_     _****_}_**
-
-**_     _****_sort_****_._****_Slice_****_(_****_builds_****_, func_****_(_****_i _****_int_****_, _****_j _****_int_****_) _****_bool _****_{_**
-
-**_        _****_return _****_builds_****_[_****_i_****_]._****_Id _****_> _****_builds_****_[_****_j_****_]._****_Id_**
-
-**_     _****_})_**
+     sort.Slice(builds, func(i int, j int) bool {
+        return builds[i].Id > builds[j].Id
+     })
+```
 
  
 
@@ -98,179 +90,118 @@ Append работает следующим образом (blog.golang.org/slice
 
 Код бенчмарка:
 
-**package **services
+```
+package services
 
-**import **(
-
-  **"testing"**
-
-**  "sort"**
-
+import (
+  "testing"
+  "sort"
 )
 
-**type **GameBuild **struct **{
-
+type GameBuild struct {
   Id                  int
-
   ExtractedSize       int64
-
   PatchUrls           string
-
   ReversePatchUrls    string
-
   RPatchExtractedSize int64
-
 }
 
-**type **GameBuilds []*GameBuild
+type GameBuilds []*GameBuild
 
-**func **(a GameBuilds) Len() int           { **return **len(a) }
+func (a GameBuilds) Len() int           { return len(a) }
+func (a GameBuilds) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a GameBuilds) Less(i, j int) bool { return a[i].Id < a[j].Id }
 
-**func **(a GameBuilds) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-
-**func **(a GameBuilds) Less(i, j int) bool { **return **a[i].Id < a[j].Id }
-
-**func **prepare() GameBuilds {
-
-  **var **builds GameBuilds
-
-  **for **i := 0; i < 100000; i++ {
-
+func prepare() GameBuilds {
+  var builds GameBuilds
+  for i := 0; i < 100000; i++ {
      builds = append(builds, &GameBuild{Id: i})
-
   }
-
-  **return **builds
-
+  return builds
 }
 
-**func **BenchmarkF1(b *testing.B) {
-
+func BenchmarkF1(b *testing.B) {
   data := prepare()
-
   builds := make(GameBuilds, len(data))
 
   b.ResetTimer()
-
-  **for **i := 0; i < b.N; i++ {
-
-     **var **tempList GameBuilds
-
+  for i := 0; i < b.N; i++ {
+     var tempList GameBuilds
      copy(builds, data)
-
-     **for **i := len(builds) - 1; i >= 0; i-- {
-
+     for i := len(builds) - 1; i >= 0; i-- {
         b := builds[i]
-
         b.PatchUrls, b.ExtractedSize = b.ReversePatchUrls, b.RPatchExtractedSize
-
         tempList = append(tempList, b)
-
      }
 
   }
 
 }
 
-**func **BenchmarkF2(b *testing.B) {
-
+func BenchmarkF2(b *testing.B) {
   data := prepare()
-
   builds := make(GameBuilds, len(data))
 
   b.ResetTimer()
-
-  **for **i := 0; i < b.N; i++ {
-
-     **var **tempList GameBuilds
-
+  for i := 0; i < b.N; i++ {
+     var tempList GameBuilds
      copy(builds, data)
-
-     **for **_, build := **range **builds {
-
+     for _, build := range builds {
         build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
-
         tempList = append([]*GameBuild{build}, tempList...)
-
      }
-
   }
 
 }
 
-**func **BenchmarkF3(b *testing.B) {
-
+func BenchmarkF3(b *testing.B) {
   data := prepare()
-
   builds := make(GameBuilds, len(data))
 
   b.ResetTimer()
-
-  **for **i := 0; i < b.N; i++ {
-
+  for i := 0; i < b.N; i++ {
      copy(builds, data)
-
-     **for **_, build := **range **builds {
-
+     for _, build := range builds {
         build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
-
      }
-
      sort.Sort(sort.Reverse(builds))
-
   }
 
 }
 
-**func **BenchmarkF4(b *testing.B) {
-
+func BenchmarkF4(b *testing.B) {
   data := prepare()
-
   builds := make(GameBuilds, len(data))
 
   b.ResetTimer()
-
-  **for **i := 0; i < b.N; i++ {
-
+  for i := 0; i < b.N; i++ {
      copy(builds, data)
-
-     **for **_, build := **range **builds {
-
+     for _, build := range builds {
         build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
-
      }
-
-     sort.Slice(builds, **func**(i int, j int) bool {
-
-        **return **builds[i].Id > builds[j].Id
-
+     sort.Slice(builds, func(i int, j int) bool {
+        return builds[i].Id > builds[j].Id
      })
-
   }
 
 }
 
-**func **BenchmarkF5(b *testing.B) {
 
+func BenchmarkF5(b *testing.B) {
   data := prepare()
-
   builds := make(GameBuilds, len(data))
 
   b.ResetTimer()
-
-  **for **i := 0; i < b.N; i++ {
-
+  for i := 0; i < b.N; i++ {
      copy(builds, data)
-
-     **for **_, build := **range **builds {
-
+     for _, build := range builds {
         build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
-
      }
-
   }
 
 }
+
+```
 
 Запустим бенчмарк командой:
 

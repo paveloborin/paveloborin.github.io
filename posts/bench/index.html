@@ -161,23 +161,18 @@
 
 <p>На днях я переписывал один пакет на Go и мое внимание привлек следующий код, который как раз можно было бы использовать в качестве такого практического примера:</p>
 
-<p>&rdquo;&rsquo;
-builds := store.Instance.GetBuildsFromNumberToNumber(stageBuild.BuildNumber, lastBuild.BuildNumber)</p>
+<pre><code>builds := store.Instance.GetBuildsFromNumberToNumber(stageBuild.BuildNumber, lastBuild.BuildNumber)
 
-<p>tempList := model.GameBuildsList{}</p>
+tempList := model.GameBuildsList{}
 
-<p>for i := len(builds) - 1; i &gt;= 0; i&ndash; {</p>
-
-<p>b := builds[i]</p>
-
-<p>b.PatchURLs = b.ReversePatchURLs</p>
-
-<p>b.ExtractedSize = b.RPatchExtractedSize</p>
-
-<p>tempList = append(tempList, b)</p>
-
-<p>}
-&ldquo;&rsquo;</p>
+for i := len(builds) - 1; i &gt;= 0; i-- {
+  b := builds[i]
+  b.PatchURLs = b.ReversePatchURLs
+  b.ExtractedSize = b.RPatchExtractedSize
+  tempList = append(tempList, b)
+  
+}
+</code></pre>
 
 <p>Этот код во всех элементах слайса <strong><em>builds,</em></strong> возвращаемого из базы данных,* заменяет PatchURLs на ReversePatchURLs, ExtractedSize на RPatchExtractedSize и делает реверс - меняет порядок элементов, так чтобы последний элемент стал первым, а первый последним.</p>
 
@@ -189,43 +184,38 @@ builds := store.Instance.GetBuildsFromNumberToNumber(stageBuild.BuildNumber, las
 
 <p>Первый вариант: перебор всех элементов в цикле range; для реверса первоначального слайса в каждой итерации добавляем элемент в начало итогового массива. Так мы избавимся от: громоздкого <em>for</em>, переменной  <em>i</em>, использования функции <em>len</em>, трудно воспринимаемого перебора элементов с конца, а также сократим количество кода на две строки с 7 строк до  5, а чем меньше кода, тем меньше вероятность допустить в нем ошибку.</p>
 
-<p><strong>_var _</strong><strong>_tempList _</strong><strong><em>[]*</em></strong><strong><em>store</em></strong><strong><em>.</em></strong><strong><em>GameBuild</em></strong></p>
+<pre><code>var tempList []*store.GameBuild
 
-<p><strong>_for _</strong><strong>___</strong><strong>_, _</strong><strong>_build _</strong><strong>_:= _</strong><strong>_range _</strong><strong>_builds _</strong><strong><em>{</em></strong></p>
-
-<p><strong>_  _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>PatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong>_ExtractedSize _</strong><strong>_= _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>ReversePatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>RPatchExtractedSize</em></strong></p>
-
-<p><strong>_  _</strong><strong>_tempList _</strong><strong>_= _</strong><strong><em>append</em></strong><strong><em>([]*</em></strong><strong><em>store</em></strong><strong><em>.</em></strong><strong><em>GameBuild</em></strong><strong><em>{</em></strong><strong><em>build</em></strong><strong><em>}</em></strong><strong>_, _</strong><strong><em>tempList</em></strong><strong><em>&hellip;)</em></strong></p>
-
-<p><strong><em>}</em></strong></p>
+for _, build := range builds {
+  build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+  tempList = append([]*store.GameBuild{build}, tempList...)
+  
+}
+</code></pre>
 
 <p>Убрав перебор слайса с конца,  мы четко разграничили операции изменения элементов (3 строка)  и реверса исходного массива (4 строка).</p>
 
 <p>Основной замысел второго варианта состоит в еще большем разнесении изменения элементов и сортировки. Сперва перебираем элементы и меняем их, а потом сортируем слайс отдельной операцией. Данный метод потребует дополнительной реализации интерфейса сортировки для структуры-элемента слайса,  но повысит читабельность и позволит полностью отделить и изолировать реверс от изменения элементов, а слово <strong>_Reverse _</strong>однозначно укажет читателю на желаемый результат.</p>
 
-<p><strong>_var _</strong><strong>_tempList _</strong><strong><em>[]*</em></strong><strong><em>store</em></strong><strong><em>.</em></strong><strong><em>GameBuild</em></strong></p>
+<pre><code>var tempList []*store.GameBuild
 
-<p><strong>_for _</strong><strong>___</strong><strong>_, _</strong><strong>_build _</strong><strong>_:= _</strong><strong>_range _</strong><strong>_builds _</strong><strong><em>{</em></strong></p>
+for _, build := range builds {
+  build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+ }
 
-<p><strong>_  _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>PatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong>_ExtractedSize _</strong><strong>_= _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>ReversePatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>RPatchExtractedSize</em></strong></p>
-
-<p><strong>_ _</strong><strong><em>}</em></strong></p>
-
-<p><strong><em>sort.</em></strong><strong><em>Sort</em></strong><strong><em>(sort.</em></strong><strong><em>Reverse</em></strong><strong><em>(sort.</em></strong><strong><em>IntSlice</em></strong><strong><em>(keys)))</em></strong></p>
+sort.Sort(sort.Reverse(sort.IntSlice(keys)))
+</code></pre>
 
 <p>Третий вариант - является практически повторением второго, но для сортировки используется <strong><em>sort</em></strong><strong><em>.</em></strong><strong><em>Slice</em></strong>, что добавляет лишнюю строчку, но избавляет нас от необходимости дополнительно реализовывать интерфейс сортировки.</p>
 
-<p><strong>_     _</strong><strong>_for _</strong><strong>___</strong><strong>_, _</strong><strong>_build _</strong><strong>_:= _</strong><strong>_range _</strong><strong>_builds _</strong><strong><em>{</em></strong></p>
+<pre><code>     for _, build := range builds {
+  		build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+     }
 
-<p><strong>_         _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>PatchUrls</em></strong><strong>_, _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong>_ExtractedSize _</strong><strong>_= _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>ReversePatchUrls</em></strong><strong>_,          _</strong><strong><em>build</em></strong><strong><em>.</em></strong><strong><em>RPatchExtractedSize</em></strong></p>
-
-<p><strong>_     _</strong><strong><em>}</em></strong></p>
-
-<p><strong>_     _</strong><strong><em>sort</em></strong><strong><em>.</em></strong><strong><em>Slice</em></strong><strong><em>(</em></strong><strong><em>builds</em></strong><strong><em>, func</em></strong><strong><em>(</em></strong><strong>_i _</strong><strong><em>int</em></strong><strong>_, _</strong><strong>_j _</strong><strong><em>int</em></strong><strong>_) _</strong><strong>_bool _</strong><strong><em>{</em></strong></p>
-
-<p><strong>_        _</strong><strong>_return _</strong><strong><em>builds</em></strong><strong><em>[</em></strong><strong><em>i</em></strong><strong><em>].</em></strong><strong>_Id _</strong><strong>_&gt; _</strong><strong><em>builds</em></strong><strong><em>[</em></strong><strong><em>j</em></strong><strong><em>].</em></strong><strong><em>Id</em></strong></p>
-
-<p><strong>_     _</strong><strong><em>})</em></strong></p>
+     sort.Slice(builds, func(i int, j int) bool {
+        return builds[i].Id &gt; builds[j].Id
+     })
+</code></pre>
 
 <p>На первый взгляд, по внутренней сложности, количеству итераций, используемым функциям изначальный код и первый алгоритм близки; второй  и третий варианты могут быть чуть сложнее, но за счет использования встроенных функций однозначно сказать какой из четырех вариантов будет самым оптимальным все же нельзя.</p>
 
@@ -243,185 +233,117 @@ builds := store.Instance.GetBuildsFromNumberToNumber(stageBuild.BuildNumber, las
 
 <p>Код бенчмарка:</p>
 
-<p>**package **services</p>
+<pre><code>package services
 
-<p>**import **(</p>
+import (
+  &quot;testing&quot;
+  &quot;sort&quot;
+)
 
-<p><strong>&ldquo;testing&rdquo;</strong></p>
+type GameBuild struct {
+  Id                  int
+  ExtractedSize       int64
+  PatchUrls           string
+  ReversePatchUrls    string
+  RPatchExtractedSize int64
+}
 
-<p>**  &ldquo;sort&rdquo;**</p>
+type GameBuilds []*GameBuild
 
-<p>)</p>
+func (a GameBuilds) Len() int           { return len(a) }
+func (a GameBuilds) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a GameBuilds) Less(i, j int) bool { return a[i].Id &lt; a[j].Id }
 
-<p>**type **GameBuild **struct **{</p>
+func prepare() GameBuilds {
+  var builds GameBuilds
+  for i := 0; i &lt; 100000; i++ {
+     builds = append(builds, &amp;GameBuild{Id: i})
+  }
+  return builds
+}
 
-<p>Id                  int</p>
+func BenchmarkF1(b *testing.B) {
+  data := prepare()
+  builds := make(GameBuilds, len(data))
 
-<p>ExtractedSize       int64</p>
+  b.ResetTimer()
+  for i := 0; i &lt; b.N; i++ {
+     var tempList GameBuilds
+     copy(builds, data)
+     for i := len(builds) - 1; i &gt;= 0; i-- {
+        b := builds[i]
+        b.PatchUrls, b.ExtractedSize = b.ReversePatchUrls, b.RPatchExtractedSize
+        tempList = append(tempList, b)
+     }
 
-<p>PatchUrls           string</p>
+  }
 
-<p>ReversePatchUrls    string</p>
+}
 
-<p>RPatchExtractedSize int64</p>
+func BenchmarkF2(b *testing.B) {
+  data := prepare()
+  builds := make(GameBuilds, len(data))
 
-<p>}</p>
+  b.ResetTimer()
+  for i := 0; i &lt; b.N; i++ {
+     var tempList GameBuilds
+     copy(builds, data)
+     for _, build := range builds {
+        build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+        tempList = append([]*GameBuild{build}, tempList...)
+     }
+  }
 
-<p>**type **GameBuilds []*GameBuild</p>
+}
 
-<p>**func **(a GameBuilds) Len() int           { **return **len(a) }</p>
+func BenchmarkF3(b *testing.B) {
+  data := prepare()
+  builds := make(GameBuilds, len(data))
 
-<p>**func **(a GameBuilds) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }</p>
+  b.ResetTimer()
+  for i := 0; i &lt; b.N; i++ {
+     copy(builds, data)
+     for _, build := range builds {
+        build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+     }
+     sort.Sort(sort.Reverse(builds))
+  }
 
-<p>**func **(a GameBuilds) Less(i, j int) bool { **return **a[i].Id &lt; a[j].Id }</p>
+}
 
-<p>**func **prepare() GameBuilds {</p>
+func BenchmarkF4(b *testing.B) {
+  data := prepare()
+  builds := make(GameBuilds, len(data))
 
-<p>**var **builds GameBuilds</p>
+  b.ResetTimer()
+  for i := 0; i &lt; b.N; i++ {
+     copy(builds, data)
+     for _, build := range builds {
+        build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+     }
+     sort.Slice(builds, func(i int, j int) bool {
+        return builds[i].Id &gt; builds[j].Id
+     })
+  }
 
-<p>**for **i := 0; i &lt; 100000; i++ {</p>
+}
 
-<pre><code> builds = append(builds, &amp;GameBuild{Id: i})
+
+func BenchmarkF5(b *testing.B) {
+  data := prepare()
+  builds := make(GameBuilds, len(data))
+
+  b.ResetTimer()
+  for i := 0; i &lt; b.N; i++ {
+     copy(builds, data)
+     for _, build := range builds {
+        build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
+     }
+  }
+
+}
+
 </code></pre>
-
-<p>}</p>
-
-<p>**return **builds</p>
-
-<p>}</p>
-
-<p>**func **BenchmarkF1(b *testing.B) {</p>
-
-<p>data := prepare()</p>
-
-<p>builds := make(GameBuilds, len(data))</p>
-
-<p>b.ResetTimer()</p>
-
-<p>**for **i := 0; i &lt; b.N; i++ {</p>
-
-<pre><code> **var **tempList GameBuilds
-
- copy(builds, data)
-
- **for **i := len(builds) - 1; i &gt;= 0; i-- {
-
-    b := builds[i]
-
-    b.PatchUrls, b.ExtractedSize = b.ReversePatchUrls, b.RPatchExtractedSize
-
-    tempList = append(tempList, b)
-
- }
-</code></pre>
-
-<p>}</p>
-
-<p>}</p>
-
-<p>**func **BenchmarkF2(b *testing.B) {</p>
-
-<p>data := prepare()</p>
-
-<p>builds := make(GameBuilds, len(data))</p>
-
-<p>b.ResetTimer()</p>
-
-<p>**for **i := 0; i &lt; b.N; i++ {</p>
-
-<pre><code> **var **tempList GameBuilds
-
- copy(builds, data)
-
- **for **_, build := **range **builds {
-
-    build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
-
-    tempList = append([]*GameBuild{build}, tempList...)
-
- }
-</code></pre>
-
-<p>}</p>
-
-<p>}</p>
-
-<p>**func **BenchmarkF3(b *testing.B) {</p>
-
-<p>data := prepare()</p>
-
-<p>builds := make(GameBuilds, len(data))</p>
-
-<p>b.ResetTimer()</p>
-
-<p>**for **i := 0; i &lt; b.N; i++ {</p>
-
-<pre><code> copy(builds, data)
-
- **for **_, build := **range **builds {
-
-    build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
-
- }
-
- sort.Sort(sort.Reverse(builds))
-</code></pre>
-
-<p>}</p>
-
-<p>}</p>
-
-<p>**func **BenchmarkF4(b *testing.B) {</p>
-
-<p>data := prepare()</p>
-
-<p>builds := make(GameBuilds, len(data))</p>
-
-<p>b.ResetTimer()</p>
-
-<p>**for **i := 0; i &lt; b.N; i++ {</p>
-
-<pre><code> copy(builds, data)
-
- **for **_, build := **range **builds {
-
-    build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
-
- }
-
- sort.Slice(builds, **func**(i int, j int) bool {
-
-    **return **builds[i].Id &gt; builds[j].Id
-
- })
-</code></pre>
-
-<p>}</p>
-
-<p>}</p>
-
-<p>**func **BenchmarkF5(b *testing.B) {</p>
-
-<p>data := prepare()</p>
-
-<p>builds := make(GameBuilds, len(data))</p>
-
-<p>b.ResetTimer()</p>
-
-<p>**for **i := 0; i &lt; b.N; i++ {</p>
-
-<pre><code> copy(builds, data)
-
- **for **_, build := **range **builds {
-
-    build.PatchUrls, build.ExtractedSize = build.ReversePatchUrls, build.RPatchExtractedSize
-
- }
-</code></pre>
-
-<p>}</p>
-
-<p>}</p>
 
 <p>Запустим бенчмарк командой:</p>
 
