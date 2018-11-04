@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Философское on Pavel Oborin</title>
+    <link>https://pavel.oborin.me/tags/%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D1%81%D0%BA%D0%BE%D0%B5/</link>
+    <description>Recent content in Философское on Pavel Oborin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Sun, 04 Nov 2018 12:30:40 +0500</lastBuildDate>
+    
+	<atom:link href="https://pavel.oborin.me/tags/%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D1%81%D0%BA%D0%BE%D0%B5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Размышление о развитии</title>
+      <link>https://pavel.oborin.me/just-for-fan/writings/progress/</link>
+      <pubDate>Sun, 04 Nov 2018 12:30:40 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/just-for-fan/writings/progress/</guid>
+      <description>У меня недавна вышла статья (https://tproger.ru/articles/extending-software-functionality/). И мне немного стыдно, я там слегка слукавил, говоря о развитии - что все развивается. На самом деле я не верю в развитие и сказал это чисто для того, чтобы быть ближе к массовому читателю.
+На мой взгляд, развитие - это какая-то пустышка, фейк. Когда мне кто-то рассказывает, как он саморазвивается, просматривая какие-то онлайн курсы или читая статьи в интернете, посетив лекцию, то мне слегка забавно.</description>
+    </item>
+    
+  </channel>
+</rss>
