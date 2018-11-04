@@ -6,10 +6,20 @@
     <description>Recent content on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Wed, 05 Sep 2018 20:00:57 +0500</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 12:30:40 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Размышление о развитии</title>
+      <link>https://pavel.oborin.me/just-for-fan/writings/progress/</link>
+      <pubDate>Sun, 04 Nov 2018 12:30:40 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/just-for-fan/writings/progress/</guid>
+      <description>Размышление о развитии У меня недавна вышла статья (https://tproger.ru/articles/extending-software-functionality/). И мне немного стыдно, я там слегка слукавил, говоря о развитии - что все развивается. На самом деле я не верю в развитие и сказал это чисто для того, чтобы быть ближе к массовому читателю.
+На мой взгляд, развитие - это какая-то пустышка, фейк. Когда мне кто-то рассказывает, как он саморазвивается, посещая там какие-то курсы или читаю статьи в интернете, посетив лекцию мне слегка забавно.</description>
+    </item>
     
     <item>
       <title>Бенчмарк, как основной критерий принятия решения о изменении существующего кода</title>
