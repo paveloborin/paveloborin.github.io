@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Wed, 05 Sep 2018 20:00:57 +0500</lastBuildDate>
+    <lastBuildDate>Thu, 15 Nov 2018 16:30:57 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Установка PHP 7.2 &#43; xdebug</title>
+      <link>https://pavel.oborin.me/posts/php-xdebug/</link>
+      <pubDate>Thu, 15 Nov 2018 16:30:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/php-xdebug/</guid>
+      <description>brew install php@7.2
+brew install autoconf
+pecl install xdebug
+pecl install redis
+pecl install apcu
+pecl install memcached</description>
+    </item>
     
     <item>
       <title>Бенчмарк, как основной критерий принятия решения о изменении существующего кода</title>

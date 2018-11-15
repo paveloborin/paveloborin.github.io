@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on Pavel Oborin</title>
+    <link>https://pavel.oborin.me/tags/php/</link>
+    <description>Recent content in Php on Pavel Oborin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Thu, 15 Nov 2018 16:30:57 +0500</lastBuildDate>
+    
+	<atom:link href="https://pavel.oborin.me/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Установка PHP 7.2 &#43; xdebug</title>
+      <link>https://pavel.oborin.me/posts/php-xdebug/</link>
+      <pubDate>Thu, 15 Nov 2018 16:30:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/posts/php-xdebug/</guid>
+      <description>brew install php@7.2
+brew install autoconf
+pecl install xdebug
+pecl install redis
+pecl install apcu
+pecl install memcached</description>
+    </item>
+    
+  </channel>
+</rss>
