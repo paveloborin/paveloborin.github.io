@@ -1,7 +1,7 @@
 ---
 title: "Бенчмарк, как основной критерий принятия решения о изменении существующего кода"
-date: 2018-09-05T20:00:57+05:00
-draft: false
+date: 2025-09-05T20:00:57+05:00
+draft: true
 tags: ["go"]
 ---
 Билл Кеннеди в одной из лекций своего курса "Ultimate Go programming" на safarybook ([https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/](https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/))  сказал следующее:
