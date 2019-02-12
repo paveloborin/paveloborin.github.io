@@ -5,8 +5,8 @@ draft: true
 tags: ["мысли"]
 ---
 
-{{< youtube dBU4v-qY5ng >}}
-
 {{< youtube _bSVY-L2LXw >}}
+
+{{< youtube dBU4v-qY5ng >}}
 
 {{< youtube dYGB5-d3EkA >}}
