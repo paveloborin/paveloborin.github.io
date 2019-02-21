@@ -4,6 +4,8 @@ date: 2018-12-08T10:30:57+05:00
 draft: false
 ---
 
+- [Как обеспечить доступность веб-сервиса в облаке при отказе дата-центра (Habr)](https://habr.com/ru/post/440338/)
+
 - [How to Add New Features to Your App in Production and Not Ruin Anything (Medium)](https://medium.com/@oborin/how-to-add-new-features-to-your-app-in-production-and-not-ruin-anything-da2c6dfb6fc2)
 
 - [Бенчмарк как основание для принятия решения об изменении кода (Habr)](https://habr.com/ru/post/438446/)
