@@ -6,19 +6,10 @@
     <description>Recent content on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 12 Feb 2019 20:30:40 +0500</lastBuildDate>
+    <lastBuildDate>Mon, 28 Jan 2019 20:30:40 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Три мелодии из фильмов</title>
-      <link>https://pavel.oborin.me/just-for-fan/writings/tml/</link>
-      <pubDate>Tue, 12 Feb 2019 20:30:40 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/just-for-fan/writings/tml/</guid>
-      <description>       </description>
-    </item>
     
     <item>
       <title>Подвалы Достоевского</title>
@@ -46,17 +37,6 @@
     </item>
     
     <item>
-      <title>Некоторые команды Кубернетиса</title>
-      <link>https://pavel.oborin.me/posts/kuber-some-commands/</link>
-      <pubDate>Thu, 23 Aug 2018 12:30:57 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/posts/kuber-some-commands/</guid>
-      <description>У меня на рабочем столе лежит блокнот с наиболее часто используемыми командами Кубернетиса, который я уже редко открываю. Блокнот давно пора выбросить, а данные &amp;ldquo;оцифровать&amp;rdquo; - кому-нибудь еще могут пригодиться. Сперва хотел сделать из заметок некий справочник, но команды Кубренетиса такие очевидные, что на мой взгляд дополнительных пояснений не требуют.
-INSTALL MAC
- curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl 2. chmod +x ./kubectl 3. sudo mv ./kubectl /usr/local/bin/kubectl VERSION, HELP - kubectl version - kubectl help PROXY - kubectl proxy CONFIG Установка контекста - kubectl config set-context my-context &amp;ndash;namespace=mystuff - kubectl config use-context my-context LABEL - kubectl label pods bar color=red DEBUGGING - kubectl logs pod-name - kubectl exec -it pod-name &amp;ndash;bash - kubectl cp pod-name:/path/to/remote/file /path/to/local/file DELETE - kubectl delete resource-name obj-name - kubectl delete -f obj.</description>
-    </item>
-    
-    <item>
       <title>Про использование секретов в Кубернетис</title>
       <link>https://pavel.oborin.me/posts/kuber-secrets/</link>
       <pubDate>Fri, 10 Aug 2018 18:30:57 +0500</pubDate>
@@ -64,15 +44,6 @@ INSTALL MAC
       <guid>https://pavel.oborin.me/posts/kuber-secrets/</guid>
       <description>Часто начинающие разработчики «грешат» тем, что зашивают в код, коммитят в репозиторий или пишут в базу такие данные как: адреса апи, токены, файлы с ключами, пароли. В английской литературе такие данные называются sensitive data. Если от закоммичивания паролей уже все отказались, то остальное еще можно встретить.
 Хардкодить sensitive данные - это плохая практика. Во-первых, это неудобно для эксплуатации систем. Например, когда у вас разное окружение: функциональные тесты, тестовые сервера, боевые сервера, то развязать это все становится сложно.</description>
-    </item>
-    
-    <item>
-      <title>Прагматичный подход к расходованию своих ресурсов</title>
-      <link>https://pavel.oborin.me/just-for-fan/writings/results/</link>
-      <pubDate>Thu, 09 Aug 2018 13:30:40 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/just-for-fan/writings/results/</guid>
-      <description>Недавно я задумался над своей историей, у всех блогеров (даже начинающих) должна быть своя история :) Правда состоит в том, что самым честным и непредвзятым источником информации могут являться факты, а любая история в какой-то степени является сказкой. Но в то же время более удобный способ подачи информации, чем рассказ люди так и не придумали. Как писал Сомерсет Моэм: &amp;ldquo;Факт плохой рассказчик: обычно он приступает к рассказу наудачу, как правило задолго до начала, и обрывается на полуслове не дойдя до завершения.</description>
     </item>
     
     <item>
@@ -241,31 +212,6 @@ $ go get -u gopkg.in/alecthomas/gometalinter.v2  $ gometalinter &amp;ndash;insta
     </item>
     
     <item>
-      <title>Игры в тумане</title>
-      <link>https://pavel.oborin.me/just-for-fan/writings/games-in-the-fog/</link>
-      <pubDate>Mon, 26 Oct 2015 17:53:40 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/just-for-fan/writings/games-in-the-fog/</guid>
-      <description>Игры в тумане. Первая повесть Основной задачей, которую я ставлю перед собой, приступая к написанию данного рассказа, является с одной стороны создание законченного текста простого для воспрития, с другой повесть с элементами саморефлексии, символизма и множественными отсылами.
-Основные символы: туман, порталы, сон.
-Повесть должна стать своеобразным слоеным пирогом с элементами игры, т.е вызывать интерес у разных людей. Для обывателей это будет фантастический рассказ о перелете на Марс, о возрастном кризисе, человеческих взаимоотношениях, для думающих людей это прежде всего текст о поиске себя.</description>
-    </item>
-    
-    <item>
-      <title>Ощущение пепелища</title>
-      <link>https://pavel.oborin.me/just-for-fan/writings/ash/</link>
-      <pubDate>Sat, 20 Sep 2014 13:30:40 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/just-for-fan/writings/ash/</guid>
-      <description>Ощущение пепелища Вчера на пробежке слушал Шуберта, и мне в голову пришел очередной образ, объясняющий реальность и тенденции в мире.
-Это пепелище.
-Мы живем на пепелище.
-Все более менее значимое уже давно выгорело. Какие-то последние крохи человечество еще высасывает, но это все.
-Больше ничего. Мир без красок, запахов, эмоций, стерильный мир выжженной земли. Не будет больше ни Моцарта, ни Бетховена, ни Шуберта. И понятно почему.
-Теперь можно играться только с пеплом, отсюда минимализм.</description>
-    </item>
-    
-    <item>
       <title>&#34;Банальность зла&#34; Ханна Арендт</title>
       <link>https://pavel.oborin.me/just-for-fan/book-reviews/eichmann-in-jerusalem/</link>
       <pubDate>Sat, 17 May 2014 13:30:40 +0500</pubDate>
@@ -287,33 +233,6 @@ $ go get -u gopkg.in/alecthomas/gometalinter.v2  $ gometalinter &amp;ndash;insta
 Кроме того, это отличная книга, прекрасные красочные описания, которые не просто прочувствоваются во время чтения, а врезаются, становясь твоими собственными воспоминаниями.
 В Матиссе можно наугад открыть любое место и наслаждаться:
 &amp;ldquo;Слабоумие проникало в Надю онемением.</description>
-    </item>
-    
-    <item>
-      <title>Книги</title>
-      <link>https://pavel.oborin.me/just-for-fan/writings/books/</link>
-      <pubDate>Thu, 18 Mar 2010 13:30:40 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/just-for-fan/writings/books/</guid>
-      <description>Книги Мой друг любит книги
-Моя подруга любит людей
-Я люблю наблюдать за ними.
-Один раз научившись читать, ты уже не сможешь наслаждаться непониманием.
-Как бы ты того не хотел, знаки превращаются в буквы, буквы в слова, слова в предложения. Выражение в содержание.
-Люди, как книги.
-Они различаются содержанием, тиражом, иллюстрациями, пестротой обложки, толщиной, целями и задачами, реципиентами, издательством, потертостью, количеством авторов…
-Есть книги понятные, есть непонятные, есть которые никогда не поймешь.</description>
-    </item>
-    
-    <item>
-      <title>Свободный день</title>
-      <link>https://pavel.oborin.me/just-for-fan/writings/freeday/</link>
-      <pubDate>Mon, 15 Mar 2010 13:30:40 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/just-for-fan/writings/freeday/</guid>
-      <description>Свободный день Странное такое ощущение
-с утра было тихо и спокойно: снег блестел на солнце, все было белым, флигель на крыше в форме ангела смотрел на восток, часы с разбитым стеклом в аллее показывали пол десятого, я ел фундук и выплевывал скорлупки на белый снег.
-Общага, мокрые носки, трамвай, Димка; тренажерный зал, улыбающаяся девушка на входе, похоже она счастлива. Беговая дорожка, я бегу и остаюсь на месте передо мной облака.</description>
     </item>
     
   </channel>

@@ -6,19 +6,10 @@
     <description>Recent content in Tags on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 12 Feb 2019 20:30:40 +0500</lastBuildDate>
+    <lastBuildDate>Mon, 28 Jan 2019 20:30:40 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>мысли</title>
-      <link>https://pavel.oborin.me/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</link>
-      <pubDate>Tue, 12 Feb 2019 20:30:40 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>рецензии</title>
@@ -32,18 +23,9 @@
     <item>
       <title>kubernetes</title>
       <link>https://pavel.oborin.me/tags/kubernetes/</link>
-      <pubDate>Thu, 23 Aug 2018 12:30:57 +0500</pubDate>
+      <pubDate>Fri, 10 Aug 2018 18:30:57 +0500</pubDate>
       
       <guid>https://pavel.oborin.me/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>главное</title>
-      <link>https://pavel.oborin.me/tags/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5/</link>
-      <pubDate>Thu, 09 Aug 2018 13:30:40 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/tags/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5/</guid>
       <description></description>
     </item>
     
@@ -129,6 +111,15 @@
     </item>
     
     <item>
+      <title>главное</title>
+      <link>https://pavel.oborin.me/tags/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5/</link>
+      <pubDate>Fri, 01 Jun 2018 18:43:57 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/tags/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>William Kennedy</title>
       <link>https://pavel.oborin.me/tags/william-kennedy/</link>
       <pubDate>Sat, 12 May 2018 10:58:57 +0200</pubDate>
@@ -201,11 +192,11 @@
     </item>
     
     <item>
-      <title>творчество</title>
-      <link>https://pavel.oborin.me/tags/%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE/</link>
-      <pubDate>Mon, 26 Oct 2015 17:53:40 +0500</pubDate>
+      <title>мысли</title>
+      <link>https://pavel.oborin.me/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</link>
+      <pubDate>Sat, 17 May 2014 13:30:40 +0500</pubDate>
       
-      <guid>https://pavel.oborin.me/tags/%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE/</guid>
+      <guid>https://pavel.oborin.me/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</guid>
       <description></description>
     </item>
     
