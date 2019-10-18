@@ -46,20 +46,6 @@
     </item>
     
     <item>
-      <title>Установка PHP 7.2 &#43; xdebug</title>
-      <link>https://pavel.oborin.me/posts/php-xdebug/</link>
-      <pubDate>Thu, 15 Nov 2018 16:30:57 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/posts/php-xdebug/</guid>
-      <description>brew install php@7.2
-brew install autoconf
-pecl install xdebug
-pecl install redis
-pecl install apcu
-pecl install memcached</description>
-    </item>
-    
-    <item>
       <title>Некоторые команды Кубернетиса</title>
       <link>https://pavel.oborin.me/posts/kuber-some-commands/</link>
       <pubDate>Thu, 23 Aug 2018 12:30:57 +0500</pubDate>
@@ -68,15 +54,6 @@ pecl install memcached</description>
       <description>У меня на рабочем столе лежит блокнот с наиболее часто используемыми командами Кубернетиса, который я уже редко открываю. Блокнот давно пора выбросить, а данные &amp;ldquo;оцифровать&amp;rdquo; - кому-нибудь еще могут пригодиться. Сперва хотел сделать из заметок некий справочник, но команды Кубренетиса такие очевидные, что на мой взгляд дополнительных пояснений не требуют.
 INSTALL MAC
  curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl 2. chmod +x ./kubectl 3. sudo mv ./kubectl /usr/local/bin/kubectl VERSION, HELP - kubectl version - kubectl help PROXY - kubectl proxy CONFIG Установка контекста - kubectl config set-context my-context &amp;ndash;namespace=mystuff - kubectl config use-context my-context LABEL - kubectl label pods bar color=red DEBUGGING - kubectl logs pod-name - kubectl exec -it pod-name &amp;ndash;bash - kubectl cp pod-name:/path/to/remote/file /path/to/local/file DELETE - kubectl delete resource-name obj-name - kubectl delete -f obj.</description>
-    </item>
-    
-    <item>
-      <title>O safarybooks и английском</title>
-      <link>https://pavel.oborin.me/posts/safarybooks/</link>
-      <pubDate>Wed, 22 Aug 2018 12:30:57 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/posts/safarybooks/</guid>
-      <description>Однажды, в бытность моего студенчества, я зашел в гости к своему другу. Его семья жила в самой обычной квартире, но мое внимание привлекли полки в прихожей с книгами по философии на немецком. Почему-то у меня навсегда остался в памяти этот момент. На вопрос зачем им это. Он ответил: “В нашей семье принято читать в оригинале”. Для меня в те годы это было каким-то культурным шоком. Для моего окружения это было не так естественно, как для его семьи.</description>
     </item>
     
     <item>
@@ -229,15 +206,6 @@ $ go get -u gopkg.in/alecthomas/gometalinter.v2  $ gometalinter &amp;ndash;insta
       <description>Jira в качестве индивидуального планировщика “А время уходит, жизнь твоя тратится на ерунду” (с)
 Аннотация В статье описан опыт использование JIRA в качестве системы индивидуального планирования. Автор рассказывает о предпосылках в пользу такого выбора, описывает процедуру установки и дает советы по использованию.
 Предыстория За неделю до Нового года я решил подвести итоги своей работы за уходящий год. Такие итоги позволяют получить более целостную картину своих результатов, и по ней дать оценку своей работе, проанализировать неудачи, выявить слабые стороны, над которыми нужно работать, и тп.</description>
-    </item>
-    
-    <item>
-      <title>Размышление о разработчиках</title>
-      <link>https://pavel.oborin.me/posts/village-programmers/</link>
-      <pubDate>Mon, 11 Dec 2017 22:42:10 +0500</pubDate>
-      
-      <guid>https://pavel.oborin.me/posts/village-programmers/</guid>
-      <description>Размышление о разработчиках Недавно моя сестра решила сделать ремонт у себя в ванной и наняла человека, целиком положившишь на рекомендации одной своей знакомой. В итоге этот человек допустил все грубейшие ошибки какие только было можно: установил унитаз высоко и не по центру туалета, сделал трубу слива в ванной выше уровня слива самой ванной, двери в ванной и в туалете разной высоты. Сестра отдала за работу свой месячный оклад и две недели времени на контроль за исправлением (расстаться с “мастером” и нанять нового выходило уже намного дороже запланированного бюджета).</description>
     </item>
     
     <item>
