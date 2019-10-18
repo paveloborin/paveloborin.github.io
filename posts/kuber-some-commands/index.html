@@ -59,7 +59,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.48" />
+ <meta name="generator" content="Hugo 0.58.3" />
         
         
         
@@ -105,8 +105,6 @@
                                 <li><a href="https://github.com/paveloborin">GITHUB</a></li>
                             
                                 <li><a href="https://www.visualcv.com/pavel-oborin">CV</a></li>
-                            
-                                <li><a href="/just-for-fan/">Just For fans</a></li>
                             
                                 <li><a href="/publications/list">My Publications</a></li>
                             
@@ -160,124 +158,111 @@
 <p>INSTALL MAC</p>
 
 <ol>
-<li><p><code>curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl</code></p></li>
+<li><code>curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl</code>
 
-<li><p><code>chmod +x ./kubectl</code></p></li>
+2. <code>chmod +x ./kubectl</code>
 
-<li><p><code>sudo mv ./kubectl /usr/local/bin/kubectl</code></p></li>
+3. <code>sudo mv ./kubectl /usr/local/bin/kubectl</code>
+
+
+
+VERSION, HELP
+
+- kubectl version
+
+- kubectl help
+
+
+PROXY
+
+- kubectl proxy
+
+CONFIG
+
+Установка контекста
+
+- kubectl config set-context my-context &ndash;namespace=mystuff
+
+- kubectl config use-context my-context
+
+
+
+LABEL
+
+- kubectl label pods bar color=red
+
+DEBUGGING
+
+- kubectl logs pod-name
+
+- kubectl exec -it pod-name &ndash;bash
+
+- kubectl cp pod-name:/path/to/remote/file /path/to/local/file
+
+
+DELETE
+
+- kubectl delete resource-name obj-name
+
+- kubectl delete -f obj.yaml
+
+EDIT
+
+- kubectl edit resource-name obj-name
+
+- kubectl edit deployment/alpaca-prod
+
+- kubectl edit service alpaca-prod
+
+
+DESCRIBE
+
+- kubectl describe service alpaca-prod
+
+- kubectl describe nodes node-1
+
+GET
+
+- kubectl get pods -o wide &ndash;show-labels
+
+- kubectl get deployments &ndash;namespace=kube-system kybe-dns
+
+- kubectl get services &ndash;namespace=kube-system kybe-dns
+
+- kubectl get componentstatuses
+
+- kubectl get nodes
+
+- kubectl get services -o wide
+
+- kubectl get pods -l app=redis -o jsonpath=&lsquo;{.items[0].metadata.name}&rsquo;
+
+- kubectl get pods my-pod -o jsonpath &ndash;template={.status.podIP}
+
+- kubectl get secrets
+
+- kubectl get configmaps
+
+- kubectl get deployments
+
+- kubectl get replicasets -o wide
+
+
+APPLY
+
+- kubectl apply -f obj.yaml
+
+- kubectl apply -f nginx-deployment.yaml
+
+ROLLOUT
+
+- kubectl rollout history deployment nginx
+
+
+AUTOSCALE
+
+kubectl autoscale deployment &ndash;min=1 &ndash;max=5 &ndash;cpu-percent=40 resource_name</li>
 </ol>
-
-<p>VERSION, HELP</p>
-
-<ul>
-<li><p>kubectl version</p></li>
-
-<li><p>kubectl help</p></li>
-</ul>
-
-<p>PROXY</p>
-
-<ul>
-<li>kubectl proxy</li>
-</ul>
-
-<p>CONFIG</p>
-
-<p>Установка контекста</p>
-
-<ul>
-<li><p>kubectl config set-context my-context &ndash;namespace=mystuff</p></li>
-
-<li><p>kubectl config use-context my-context</p></li>
-</ul>
-
-<p>LABEL</p>
-
-<ul>
-<li>kubectl label pods bar color=red</li>
-</ul>
-
-<p>DEBUGGING</p>
-
-<ul>
-<li><p>kubectl logs pod-name</p></li>
-
-<li><p>kubectl exec -it pod-name &ndash;bash</p></li>
-
-<li><p>kubectl cp pod-name:/path/to/remote/file /path/to/local/file</p></li>
-</ul>
-
-<p>DELETE</p>
-
-<ul>
-<li><p>kubectl delete resource-name obj-name</p></li>
-
-<li><p>kubectl delete -f obj.yaml</p></li>
-</ul>
-
-<p>EDIT</p>
-
-<ul>
-<li><p>kubectl edit resource-name obj-name</p></li>
-
-<li><p>kubectl edit deployment/alpaca-prod</p></li>
-
-<li><p>kubectl edit service alpaca-prod</p></li>
-</ul>
-
-<p>DESCRIBE</p>
-
-<ul>
-<li><p>kubectl describe service alpaca-prod</p></li>
-
-<li><p>kubectl describe nodes node-1</p></li>
-</ul>
-
-<p>GET</p>
-
-<ul>
-<li><p>kubectl get pods -o wide &ndash;show-labels</p></li>
-
-<li><p>kubectl get deployments &ndash;namespace=kube-system kybe-dns</p></li>
-
-<li><p>kubectl get services &ndash;namespace=kube-system kybe-dns</p></li>
-
-<li><p>kubectl get componentstatuses</p></li>
-
-<li><p>kubectl get nodes</p></li>
-
-<li><p>kubectl get services -o wide</p></li>
-
-<li><p>kubectl get pods -l app=redis -o jsonpath=&lsquo;{.items[0].metadata.name}&rsquo;</p></li>
-
-<li><p>kubectl get pods my-pod -o jsonpath &ndash;template={.status.podIP}</p></li>
-
-<li><p>kubectl get secrets</p></li>
-
-<li><p>kubectl get configmaps</p></li>
-
-<li><p>kubectl get deployments</p></li>
-
-<li><p>kubectl get replicasets -o wide</p></li>
-</ul>
-
-<p>APPLY</p>
-
-<ul>
-<li><p>kubectl apply -f obj.yaml</p></li>
-
-<li><p>kubectl apply -f nginx-deployment.yaml</p></li>
-</ul>
-
-<p>ROLLOUT</p>
-
-<ul>
-<li>kubectl rollout history deployment nginx</li>
-</ul>
-
-<p>AUTOSCALE</p>
-
-<p>kubectl autoscale deployment &ndash;min=1 &ndash;max=5 &ndash;cpu-percent=40 resource_name</p>
 </div>
 
     

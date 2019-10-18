@@ -67,10 +67,7 @@ pecl install memcached</description>
       <guid>https://pavel.oborin.me/posts/kuber-some-commands/</guid>
       <description>У меня на рабочем столе лежит блокнот с наиболее часто используемыми командами Кубернетиса, который я уже редко открываю. Блокнот давно пора выбросить, а данные &amp;ldquo;оцифровать&amp;rdquo; - кому-нибудь еще могут пригодиться. Сперва хотел сделать из заметок некий справочник, но команды Кубренетиса такие очевидные, что на мой взгляд дополнительных пояснений не требуют.
 INSTALL MAC
- curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl
- chmod +x ./kubectl
- sudo mv ./kubectl /usr/local/bin/kubectl
-  VERSION, HELP</description>
+ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl 2. chmod +x ./kubectl 3. sudo mv ./kubectl /usr/local/bin/kubectl VERSION, HELP - kubectl version - kubectl help PROXY - kubectl proxy CONFIG Установка контекста - kubectl config set-context my-context &amp;ndash;namespace=mystuff - kubectl config use-context my-context LABEL - kubectl label pods bar color=red DEBUGGING - kubectl logs pod-name - kubectl exec -it pod-name &amp;ndash;bash - kubectl cp pod-name:/path/to/remote/file /path/to/local/file DELETE - kubectl delete resource-name obj-name - kubectl delete -f obj.</description>
     </item>
     
     <item>

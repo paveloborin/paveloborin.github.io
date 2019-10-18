@@ -42,10 +42,10 @@ googleAnalytics = "UA-116728151-1"
     name = "CV"
     weight = 4
 
-[[menu.main]]
-    url = "/just-for-fan/"
-    name = "Just For fans"
-    weight = 5
+#[[menu.main]]
+#    url = "/just-for-fan/"
+#    name = "Just For fans"
+#    weight = 5
 
 [[menu.main]]
     url = "/publications/list"
