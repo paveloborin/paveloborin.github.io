@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Pavel Oborin</title>
@@ -18,12 +18,11 @@
       
       <guid>https://pavel.oborin.me/publications/list/</guid>
       <description>Как обеспечить доступность веб-сервиса в облаке при отказе дата-центра (Habr)
- How to Add New Features to Your App in Production and Not Ruin Anything (Medium)
- Бенчмарк как основание для принятия решения об изменении кода (Habr)
- Localization in Go with enclosing packages (Medium)
- Локализация в Go с помощью базовых пакетов (Habr)
- Как расширить функциональность ПО на продакшене, ничего не сломав (TProger)
- Краткое введение в безопасность приложений (Habr)</description>
+  How to Add New Features to Your App in Production and Not Ruin Anything (Medium)
+  Бенчмарк как основание для принятия решения об изменении кода (Habr)
+  Localization in Go with enclosing packages (Medium)
+  Локализация в Go с помощью базовых пакетов (Habr)
+  Как расширить функциональность ПО на продакшене, ничего не сломав (TProger)</description>
     </item>
     
   </channel>

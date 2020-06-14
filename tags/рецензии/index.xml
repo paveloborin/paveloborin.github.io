@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>рецензии on Pavel Oborin</title>
@@ -6,10 +6,20 @@
     <description>Recent content in рецензии on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 28 Jan 2019 20:30:40 +0500</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 20:30:40 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/tags/%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Лабиринт Анны Карениной</title>
+      <link>https://pavel.oborin.me/just-for-fan/book-reviews/anna_karenina/</link>
+      <pubDate>Fri, 12 Jun 2020 20:30:40 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/just-for-fan/book-reviews/anna_karenina/</guid>
+      <description>(Данную заметку я писал находясь на самоизоляции, во время которой значительно деградировал без качественного человеческого общения. Поэтому прошу не обращать внимание на грамматические и синтаксические ошибки, сухость речи и тп. Надеюсь это временно.)
+После прочтения романа Анна Каренина, мне еще долго было сложно отойти от состояния некоторой прострации и нереальности произошедшего. Смерть. Сцена смерти Анны - одна из самых сильных и глубоких вещей из всего того, что я прочел за свою жизнь.</description>
+    </item>
     
     <item>
       <title>Подвалы Достоевского</title>

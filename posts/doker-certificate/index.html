@@ -59,7 +59,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.58.3" />
+ <meta name="generator" content="Hugo 0.72.0" />
         
         
         
@@ -105,6 +105,8 @@
                                 <li><a href="https://github.com/paveloborin">GITHUB</a></li>
                             
                                 <li><a href="https://www.visualcv.com/pavel-oborin">CV</a></li>
+                            
+                                <li><a href="/just-for-fan/">Just For fans</a></li>
                             
                                 <li><a href="/publications/list">My Publications</a></li>
                             
@@ -152,24 +154,15 @@
 
 
     <br> <div class="text-justify"><p><strong>Задача:</strong></p>
-
 <p>Нужно сделать запрос из апи, развернутой в контейнере, к апи, стоящей за доменом с самоподписанным сертификатом.</p>
-
 <p>Обычно для того чтобы зайти локально из браузера на такой сайт необходимо принять сертификат.
 При попытке же вызвать такой сервис из докера будет ошибка: <em>«x509: certificate signed by unknown authority»</em>.</p>
-
 <p><strong>Решение:</strong></p>
-
 <p>Прокинуть файл сертификата в контейнер и добавить в список доверенных.</p>
-
 <p>Для нужно добавить в ваш Dockerfile следующие строки:</p>
-
-<p><code class="hljs shell">
-COPY tmp/Company-issuer-chain.pem /usr/local/share/ca-certificates/Company-issuer-chain-chain.crt</p>
-
+<!-- raw HTML omitted -->
 <p>RUN update-ca-certificates
-</code></p>
-
+<!-- raw HTML omitted --></p>
 <p>, где <em>tmp/Company-issuer-chain.pem</em> - путь до сертификата.</p>
 </div>
 
@@ -184,7 +177,7 @@ COPY tmp/Company-issuer-chain.pem /usr/local/share/ca-certificates/Company-issue
 
         <footer>
 
-            <p class="copyright text-muted">&copy; All rights reserved.</p>
+            <p class="copyright text-muted">© All rights reserved.</p>
 
         </footer>
        

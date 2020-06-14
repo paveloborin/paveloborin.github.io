@@ -1,29 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://pavel.oborin.me/just-for-fan/</loc>
-    <lastmod>2019-01-28T20:30:40+05:00</lastmod>
+    <lastmod>2020-06-12T20:30:40+05:00</lastmod>
   </url>
   
   <url>
     <loc>https://pavel.oborin.me/</loc>
-    <lastmod>2019-01-28T20:30:40+05:00</lastmod>
+    <lastmod>2020-06-12T20:30:40+05:00</lastmod>
   </url>
   
   <url>
     <loc>https://pavel.oborin.me/tags/</loc>
-    <lastmod>2019-01-28T20:30:40+05:00</lastmod>
+    <lastmod>2020-06-12T20:30:40+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pavel.oborin.me/just-for-fan/book-reviews/the-master-of-petersburg/</loc>
-    <lastmod>2019-01-28T20:30:40+05:00</lastmod>
+    <loc>https://pavel.oborin.me/just-for-fan/book-reviews/anna_karenina/</loc>
+    <lastmod>2020-06-12T20:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</loc>
+    <lastmod>2020-06-12T20:30:40+05:00</lastmod>
   </url>
   
   <url>
     <loc>https://pavel.oborin.me/tags/%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D0%B8/</loc>
+    <lastmod>2020-06-12T20:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/just-for-fan/writings/after/</loc>
+    <lastmod>2020-02-12T20:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/just-for-fan/writings/tml/</loc>
+    <lastmod>2019-02-12T20:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/just-for-fan/book-reviews/the-master-of-petersburg/</loc>
     <lastmod>2019-01-28T20:30:40+05:00</lastmod>
   </url>
   
@@ -50,6 +70,16 @@
   <url>
     <loc>https://pavel.oborin.me/posts/kuber-secrets/</loc>
     <lastmod>2018-08-10T18:30:57+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/just-for-fan/writings/results/</loc>
+    <lastmod>2018-08-09T13:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/tags/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5/</loc>
+    <lastmod>2018-08-09T13:30:40+05:00</lastmod>
   </url>
   
   <url>
@@ -133,11 +163,6 @@
   </url>
   
   <url>
-    <loc>https://pavel.oborin.me/tags/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5/</loc>
-    <lastmod>2018-06-01T18:43:57+05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pavel.oborin.me/tags/william-kennedy/</loc>
     <lastmod>2018-05-12T10:58:57+02:00</lastmod>
   </url>
@@ -213,18 +238,33 @@
   </url>
   
   <url>
-    <loc>https://pavel.oborin.me/just-for-fan/book-reviews/eichmann-in-jerusalem/</loc>
-    <lastmod>2014-05-17T13:30:40+05:00</lastmod>
+    <loc>https://pavel.oborin.me/just-for-fan/writings/games-in-the-fog/</loc>
+    <lastmod>2015-10-26T17:53:40+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pavel.oborin.me/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</loc>
+    <loc>https://pavel.oborin.me/tags/%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE/</loc>
+    <lastmod>2015-10-26T17:53:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/just-for-fan/book-reviews/eichmann-in-jerusalem/</loc>
     <lastmod>2014-05-17T13:30:40+05:00</lastmod>
   </url>
   
   <url>
     <loc>https://pavel.oborin.me/just-for-fan/book-reviews/matisse/</loc>
     <lastmod>2012-11-13T13:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/just-for-fan/writings/books/</loc>
+    <lastmod>2010-03-18T13:30:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pavel.oborin.me/just-for-fan/writings/freeday/</loc>
+    <lastmod>2010-03-15T13:30:40+05:00</lastmod>
   </url>
   
   <url>

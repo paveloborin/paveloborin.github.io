@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>главное on Pavel Oborin</title>
@@ -6,10 +6,19 @@
     <description>Recent content in главное on Pavel Oborin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Fri, 01 Jun 2018 18:43:57 +0500</lastBuildDate>
+    <lastBuildDate>Thu, 09 Aug 2018 13:30:40 +0500</lastBuildDate>
     
 	<atom:link href="https://pavel.oborin.me/tags/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Прагматичный подход к расходованию своих ресурсов</title>
+      <link>https://pavel.oborin.me/just-for-fan/writings/results/</link>
+      <pubDate>Thu, 09 Aug 2018 13:30:40 +0500</pubDate>
+      
+      <guid>https://pavel.oborin.me/just-for-fan/writings/results/</guid>
+      <description>Недавно я задумался над своей историей. У всех должна быть своя история :) Правда состоит в том, что самым честным и непредвзятым источником информации могут являться факты, а любая история в какой-то степени является сказкой. Но в то же время более удобный способ подачи информации, чем рассказ люди так и не придумали. Как писал Сомерсет Моэм: &amp;ldquo;Факт плохой рассказчик: обычно он приступает к рассказу наудачу, как правило задолго до начала, и обрывается на полуслове не дойдя до завершения.</description>
+    </item>
     
     <item>
       <title>Стратегия очагового внедрения автотестов. Часть I: О роли тестирования</title>

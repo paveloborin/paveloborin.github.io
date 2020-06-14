@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>go on Pavel Oborin</title>
@@ -18,18 +18,11 @@
       
       <guid>https://pavel.oborin.me/posts/go-tools/</guid>
       <description>Форматирование импортов Использование:
-$ goimports -d -w $(find . -type f -name &amp;lsquo;.go&amp;rsquo; -not -path &amp;ldquo;./vendor/&amp;rdquo;) 
-Установка: $ go get golang.org/x/tools/cmd/goimports 
-Автоформатирование кода Использование:
-$ go fmt ./&amp;hellip; 
+Установка: $go get golang.org/x/tools/cmd/goimports Автоформатирование кода Использование:
 Анализ корректной обработки ошибок Использование:
-$ errcheck ./&amp;hellip; 
 Установка:
-$ go get -u github.com/kisielk/errcheck 
 Анализ кода по множеству параметров Использование:
-$ gometalinter ./&amp;hellip; &amp;ndash;exclude=vendor 
-Установка:
-$ go get -u gopkg.in/alecthomas/gometalinter.v2  $ gometalinter &amp;ndash;install</description>
+Установка:</description>
     </item>
     
     <item>

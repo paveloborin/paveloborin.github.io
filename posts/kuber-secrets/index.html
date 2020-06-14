@@ -59,7 +59,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.58.3" />
+ <meta name="generator" content="Hugo 0.72.0" />
         
         
         
@@ -105,6 +105,8 @@
                                 <li><a href="https://github.com/paveloborin">GITHUB</a></li>
                             
                                 <li><a href="https://www.visualcv.com/pavel-oborin">CV</a></li>
+                            
+                                <li><a href="/just-for-fan/">Just For fans</a></li>
                             
                                 <li><a href="/publications/list">My Publications</a></li>
                             
@@ -152,82 +154,70 @@
 
 
     <br> <div class="text-justify"><p>Часто начинающие разработчики «грешат» тем, что зашивают в код, коммитят в репозиторий или пишут в базу такие данные как: адреса апи, токены, файлы с ключами, пароли. В английской литературе такие данные называются sensitive data. Если от закоммичивания паролей уже все отказались, то остальное еще можно встретить.</p>
-
 <p>Хардкодить sensitive данные - это плохая практика. Во-первых, это неудобно для эксплуатации систем. Например, когда у вас разное окружение: функциональные тесты, тестовые сервера, боевые сервера, то развязать это все становится сложно. Во-вторых, это небезопасно. Любые конфиденциальные данные при попадании в репозиторий каким бы приватным он не был становятся автоматически скомпрометированными.</p>
-
 <p>Решением является перенос sensitive данных в переменные окружения либо в отдельные файлы с правами на чтение для вашего приложения. Доступ к этим данным в боевом окружении должен быть строго ограничен. Т.е даже разработчик в большинстве случаев не должен иметь доступ к этой информации. Например, стандартный кейс - вашему приложению нужен доступ к базе данных. Правильный алгоритм: вы создаете переменную, из которой приложение будет считывать эти данные, просите своего dba создать новый коннект к базе для вашего приложения, dba передает креденшиалы админам, те в свою очередь зашивают их в переменные окружения сервиса, стартующего ваше приложение либо еще как-то. При такой схеме непосредственный доступ к паролю имеют только два человека: dba и человек ответственный за конфигурацию вашего приложения на продакшене.</p>
-
 <p>Для работы с конфиденциальными данными в Кубернетис можно использовать не только стандартные переменные окружения контейнера, но и секреты. На последнем я хочу остановиться немного подробнее.</p>
-
 <p>Объекты типа secret предназначены для хранения sensitive данных: пароли, токены, ключи. Перенос информации в секреты обеспечивает больший контроль над ее использованием и снижает риск случайного изменения или утечки этих данных.
 Если данные в секрете обновляются, то во всех использующих его приложениях они автоматически тоже обновятся. Секреты могут применяться в двух вариантах: как файловые разделы примонтированные к одному или нескольким контейнерам или как переменные окружения при старте контейнера.</p>
-
 <blockquote>
 <p>Большое достоинство секретов состоит в том, что один и тот же секрет можно использовать и как переменную окружения, и примонтировать как файл.</p>
 </blockquote>
-
 <p>Давайте рассмотрим как использовать секреты, на примере подключения приложения к googleStorage.</p>
-
 <p>Для хранения файлов в облаке GoogleStorage используются сущности называемые бакетами. Для доступа к бакету необходимо сгенерирвоать файл с ключом из консоли управления GS. GoogleStorage sdk для Go по умолчанию может брать ключ доступа к бакету из файла, путь к которому лежит в переменной окружения GOOGLE_APPLICATION вашего приложения. Как это сделать показано ниже на части спецификации Кубернетиса:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">apiVersion</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">extensions</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">v1beta1</span>
 
-<pre><code class="language-toml">apiVersion: extensions/v1beta1
+<span style="color:#a6e22e">kind</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">Deployment</span>
 
-kind: Deployment
+<span style="color:#a6e22e">metadata</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-metadata:
+ <span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">myapi</span>
 
- name: myapi
+<span style="color:#a6e22e">spec</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-spec:
+ <span style="color:#a6e22e">replicas</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">1</span>
 
- replicas: 1
+ <span style="color:#a6e22e">template</span><span style="color:#960050;background-color:#1e0010">:</span>
 
- template:
+  <span style="color:#a6e22e">metadata</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-  metadata:
+   <span style="color:#a6e22e">labels</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-   labels:
+    <span style="color:#a6e22e">service</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">myapi</span>
 
-    service: myapi
+  <span style="color:#a6e22e">spec</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-  spec:
+   <span style="color:#a6e22e">containers</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-   containers:
-
-   - name: myapi
+   <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">myapi</span>
 
    ...
 
-    volumeMounts:
+    <span style="color:#a6e22e">volumeMounts</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-    - name: myapi-gskey
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">myapi</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">gskey</span>
 
-     mountPath: /keys
+     <span style="color:#a6e22e">mountPath</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">keys</span>
 
-     readOnly: true
+     <span style="color:#a6e22e">readOnly</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span>
 
-    env:
+    <span style="color:#a6e22e">env</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-    - name: GOOGLE_APPLICATION_CREDENTIALS
+    <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">GOOGLE_APPLICATION_CREDENTIALS</span>
 
-     value: '/keys/gs_cloud_bucket_key_file'
+     <span style="color:#a6e22e">value</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#39;/keys/gs_cloud_bucket_key_file&#39;</span>
 
-   volumes:
+   <span style="color:#a6e22e">volumes</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-  - name: myapi-gskey
+  <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">myapi</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">gskey</span>
 
-    secret:
+    <span style="color:#a6e22e">secret</span><span style="color:#960050;background-color:#1e0010">:</span>
 
-     secretName: my-api
+     <span style="color:#a6e22e">secretName</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">my</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">api</span>
 
-     defaultMode: 0400
+     <span style="color:#a6e22e">defaultMode</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">0400</span>
      
-</code></pre>
-
-<p>Сам секрет в Кубернетис можно залить через консоль или через интерфейс управления Кубернетиса:</p>
-
-<p><span style="display:block;text-align:center"><img src="/static/kuber.jpg" alt="Управление секретами в Кубернетис" /></span></p>
-
+</code></pre></div><p>Сам секрет в Кубернетис можно залить через консоль или через интерфейс управления Кубернетиса:</p>
+<p><!-- raw HTML omitted --><img src="/static/kuber.jpg" alt="Управление секретами в Кубернетис"><!-- raw HTML omitted --></p>
 <p>Также не забудьте что все значения в секретах предварительно должны быть закодированы в base64.</p>
 </div>
 
@@ -242,7 +232,7 @@ spec:
 
         <footer>
 
-            <p class="copyright text-muted">&copy; All rights reserved.</p>
+            <p class="copyright text-muted">© All rights reserved.</p>
 
         </footer>
        

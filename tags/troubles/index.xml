@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>troubles on Pavel Oborin</title>
@@ -34,8 +34,7 @@
 Решение:
 Прокинуть файл сертификата в контейнер и добавить в список доверенных.
 Для нужно добавить в ваш Dockerfile следующие строки:
-COPY tmp/Company-issuer-chain.pem /usr/local/share/ca-certificates/Company-issuer-chain-chain.crt
-RUN update-ca-certificates</description>
+RUN update-ca-certificates , где tmp/Company-issuer-chain.</description>
     </item>
     
   </channel>
